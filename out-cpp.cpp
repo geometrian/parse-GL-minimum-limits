@@ -94,7 +94,7 @@ struct LimitsInt64 final { //glGetInteger64v(...)
 } limits_int64[] = {
 	{ GL_MAX_ELEMENT_INDEX,             {   I,I,   I,I,I,I,   I,I,I,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF   } },
 	{ GL_MAX_SERVER_WAIT_TIMEOUT,       {   I,I,   I,I,0,0,   0,0,0,         0,         0,         0   } },
-	{ GL_MAX_SHADER_STORAGE_BLOCK_SIZE, {   I,I,   I,I,I,I,   I,I,I,       224,       224,       227   } }
+	{ GL_MAX_SHADER_STORAGE_BLOCK_SIZE, {   I,I,   I,I,I,I,   I,I,I,     1<<24,     1<<24,     1<<27   } }
 };
 #endif
 

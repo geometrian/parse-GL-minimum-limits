@@ -162,6 +162,9 @@ def load(major,minor):
         ]: continue
         elif minval=="*" and param=="GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS": continue
         elif minval in ["see","See"]: continue
+        elif param == "GL_MAX_SHADER_STORAGE_BLOCK_SIZE":
+            if   minval=="224": minval="1<<24"
+            elif minval=="227": minval="1<<27"
         #   Fix/Update values
         if   minval in ["NONE","FALSE","TRUE","RGBA","UNSIGNED_BYTE"]: minval="GL_"+minval
         elif param=="GL_VIEWPORT_BOUNDS_RANGE": minval="{-32768.0f,32767.0f}"
