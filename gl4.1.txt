@@ -1,0 +1,489 @@
+MAX CLIP DISTANCES Z+ GetIntegerv 8
+Maximum number of user clipping
+planes 2.20
+SUBPIXEL BITS Z+ GetIntegerv 4
+Number of bits of subpixel precision
+in screen xw and yw
+3
+MAX 3D TEXTURE SIZE Z+ GetIntegerv 2048
+Maximum 3D texture image dimension
+3.8.3
+MAX TEXTURE SIZE Z+ GetIntegerv 16384
+Maximum 2D/1D texture image dimension
+3.8.3
+MAX ARRAY TEXTURE LAYERS Z+ GetIntegerv 2048
+Maximum number of layers for texture
+arrays 3.8.3
+MAX TEXTURE LOD BIAS R+ GetFloatv 2.0
+Maximum absolute texture level of
+detail bias 3.8.11
+MAX CUBE MAP TEXTURE SIZE Z+ GetIntegerv 16384
+Maximum cube map texture image
+dimension 3.8.3
+MAX RENDERBUFFER SIZE Z+ GetIntegerv 16384
+Maximum width and height of renderbuffers
+4.4.2
+MAX VIEWPORT DIMS 2  Z+ GetFloatv see 2.14.1
+Maximum viewport
+dimensions 2.14.1
+MAX VIEWPORTS Z+ GetIntegerv 16
+Maximum number of active
+viewports 2.14.1
+VIEWPORT SUBPIXEL BITS Z+ GetIntegerv 0
+No. of bits of subpixel
+precision for viewport
+bounds
+2.14.1
+VIEWPORT BOUNDS RANGE 2  R GetFloatv 1 Viewport bounds range [min; max] 1 (at least [??32768; 32767])
+2.14.1
+LAYER PROVOKING VERTEX Z4 GetIntegerv see 2.13.4
+Vertex convention followed
+by gl_Layer
+2.13.4
+VIEWPORT INDEX PROVOKING VERTEX Z4 GetIntegerv see 2.13.4
+Vertex convention
+followed by gl_-
+ViewportIndex
+2.13.4
+POINT SIZE RANGE 2  R+ GetFloatv 1,1
+Range (lo to hi) of point
+sprite sizes 3.4
+POINT SIZE GRANULARITY R+ GetFloatv –
+Point sprite size granularity
+3.4
+ALIASED LINE WIDTH RANGE 2  R+ GetFloatv 1,1
+Range (lo to hi) of aliased
+line widths 3.5
+SMOOTH LINE WIDTH RANGE 2  R+ GetFloatv 1,1
+Range (lo to hi) of antialiased
+line widths 3.5
+SMOOTH LINE WIDTH GRANULARITY R+ GetFloatv –
+Antialiased line width
+granularity 3.5
+MAX ELEMENTS INDICES Z+ GetIntegerv –
+Recommended
+max. number of
+DrawRangeElements
+indices
+2.8
+MAX ELEMENTS VERTICES Z+ GetIntegerv –
+Recommended
+max. number of
+DrawRangeElements
+vertices
+2.8
+COMPRESSED TEXTURE FORMATS 4  Z+ GetIntegerv -
+Enumerated compressed
+texture formats 3.8.5
+NUM COMPRESSED TEXTURE FORMATS Z+ GetIntegerv 4
+Number of compressed
+texture formats 3.8.5
+MAX TEXTURE BUFFER SIZE Z+ GetIntegerv 65536
+No. of addressable texels
+for buffer textures 3.8.7
+MAX RECTANGLE TEXTURE SIZE Z+ GetIntegerv 16384
+Max. width & height of
+rectangular textures 3.8.3
+PROGRAM BINARY FORMATS 0  Z GetIntegerv N/A
+Enumerated program binary
+formats 2.11.5
+NUM PROGRAM BINARY FORMATS Z GetIntegerv 0
+Number of program binary
+formats 2.11.5
+SHADER BINARY FORMATS 0  Z GetIntegerv -
+Enumerated shader binary
+formats 2.11.2
+NUM SHADER BINARY FORMATS Z+ GetIntegerv 0
+Number of shader binary
+formats 2.11.2
+SHADER COMPILER B GetBooleanv -
+Shader compiler supported
+2.11
+EXTENSIONS 0  S GetStringi –
+Supported individual extension
+names 6.1.5
+NUM EXTENSIONS Z+ GetIntegerv –
+Number of individual extension
+names 6.1.5
+MAJOR VERSION Z+ GetIntegerv 3
+Major version number
+supported 6.1.5
+MINOR VERSION Z+ GetIntegerv –
+Minor version number
+supported 6.1.5
+CONTEXT FLAGS Z+ GetIntegerv –
+Context full/forwardcompatible
+flag 6.1.5
+RENDERER S GetString – Renderer string 6.1.5
+SHADING LANGUAGE VERSION S GetString –
+Shading Language version
+supported 6.1.5
+VENDOR S GetString – Vendor string 6.1.5
+VERSION S GetString –
+OpenGL version supported
+6.1.5
+MAX VERTEX ATTRIBS Z+ GetIntegerv 16
+Number of active vertex
+attributes 2.7
+MAX VERTEX UNIFORM COMPONENTS Z+ GetIntegerv 1024
+Number of components
+for vertex shader uniform
+variables
+2.11.7
+MAX VERTEX UNIFORM VECTORS Z+ GetIntegerv 256
+Number of vectors for
+vertex shader uniform
+variables
+2.11.7
+MAX VERTEX UNIFORM BLOCKS Z+ GetIntegerv 12
+Max number of vertex
+uniform buffers per program
+2.11.7
+MAX VERTEX OUTPUT COMPONENTS Z+ GetIntegerv 64
+Max number of components
+of outputs written
+by a vertex shader
+2.11.10
+MAX VERTEX TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+Number of texture image
+units accessible by a vertex
+shader
+2.11.11
+MAX TESS GEN LEVEL Z+ GetIntegerv 64
+Max. level supported by
+tess. primitive generator 2.12.2
+MAX PATCH VERTICES Z+ GetIntegerv 32 Max. patch size 2.6.1
+MAX TESS CONTROL UNIFORM COMPONENTS Z+ GetIntegerv 1024
+No. of words for tess.
+control shader (TCS)
+uniforms
+2.12.1
+MAX TESS EVALUATION UNIFORM COMPONENTS Z+ GetIntegerv 1024
+No. of words for tess.
+evaluation shader (TES)
+uniforms
+2.12.3
+MAX TESS CONTROL TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+No. of tex. image units
+for TCS 2.11.11
+MAX TESS EVALUATION TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+No. of tex. image units
+for TES 2.11.11
+MAX TESS CONTROL OUTPUT COMPONENTS Z+ GetIntegerv 128
+No. components for TCS
+per-vertex outputs 2.12.1
+MAX TESS PATCH COMPONENTS Z+ GetIntegerv 120
+No. components for TCS
+per-patch output varyings 2.12.1
+MAX TESS CONTROL TOTAL OUTPUT COMPONENTS Z+ GetIntegerv 4096
+No. components for TCS
+per-patch output varyings 2.12.1
+MAX TESS EVALUATION OUTPUT COMPONENTS Z+ GetIntegerv 128
+No. components for TES
+per-vertex outputs 2.12.3
+MAX TESS CONTROL INPUT COMPONENTS Z+ GetIntegerv 128
+No. components for TCS
+per-vertex inputs 2.12.1
+MAX TESS EVALUATION INPUT COMPONENTS Z+ GetIntegerv 128
+No. components for TES
+per-vertex inputs 2.12.3
+MAX TESS CONTROL UNIFORM BLOCKS Z+ GetIntegerv 12
+No. of supported uniform
+blocks for TCS 2.11.7
+MAX TESS EVALUATION UNIFORM BLOCKS Z+ GetIntegerv 12
+No. of supported uniform
+blocks for TES 2.11.7
+MAX GEOMETRY UNIFORM BLOCKS Z+ GetIntegerv 12
+Max number of geometry
+uniform buffers per program
+2.11.7
+MAX GEOMETRY INPUT COMPONENTS Z+ GetIntegerv 64
+Max number of components
+of inputs read by a
+geometry shader
+2.13.4
+MAX GEOMETRY OUTPUT COMPONENTS Z+ GetIntegerv 128
+Max number of components
+of outputs written
+by a geometry shader
+2.13.4
+MAX GEOMETRY OUTPUT VERTICES Z+ GetIntegerv 256
+Maximum number of
+vertices that any geometry
+shader can can
+emit
+2.13.4
+MAX GEOMETRY TOTAL OUTPUT COMPONENTS Z+ GetIntegerv 1024
+Maximum number of total
+components (all vertices)
+of active varyings
+that a geometry shader
+can emit
+2.13.4
+MAX GEOMETRY TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+Number of texture image
+units accessible by a geometry
+shader
+2.13.4
+MAX GEOMETRY SHADER INVOCATIONS Z+ GetIntegerv 32
+Max supported geom.
+shader invocation count 2.13.4
+MAX VERTEX STREAMS Z+ GetInteger 4
+Total number of vertex
+streams 2.13.4
+MAX FRAGMENT UNIFORM COMPONENTS Z+ GetIntegerv 1024
+Number of components
+for frag. shader uniform
+variables
+3.9.1
+MAX FRAGMENT UNIFORM VECTORS Z+ GetIntegerv 256
+Number of vectors for
+frag. shader uniform
+variables
+3.9.1
+MAX FRAGMENT UNIFORM BLOCKS Z+ GetIntegerv 12
+Max number of fragment
+uniform buffers per program
+2.11.7
+MAX FRAGMENT INPUT COMPONENTS Z+ GetIntegerv 128
+Max number of components
+of inputs read by a
+fragment shader
+3.9.2
+MAX TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+Number of texture image
+units accessible by a
+fragment shader
+2.11.11
+MIN PROGRAM TEXEL OFFSET Z GetIntegerv -8
+Minimum texel offset allowed
+in lookup 2.11.11
+MAX PROGRAM TEXEL OFFSET Z GetIntegerv 7
+Maximum texel offset allowed
+in lookup 2.11.11
+MIN PROGRAM TEXTURE GATHER OFFSET Z+ GetIntegerv -8
+Min. texel offset for
+textureGather
+3.8.11
+MAX PROGRAM TEXTURE GATHER OFFSET Z+ GetIntegerv 7
+Max. texel offset for
+textureGather
+3.8.11
+MAX UNIFORM BUFFER BINDINGS Z+ GetIntegerv 60
+Max number of uniform
+buffer binding points on
+the context
+2.11.7
+MAX UNIFORM BLOCK SIZE Z+ GetIntegerv 16384
+Max size in basic machine
+units of a uniform
+block
+2.11.7
+UNIFORM BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 1
+Minimum required alignment
+for uniform buffer
+sizes and offsets
+2.11.7
+MAX COMBINED UNIFORM BLOCKS Z+ GetIntegerv 60
+Max number of uniform
+buffers per program 2.11.7
+MAX VARYING COMPONENTS Z+ GetIntegerv 60
+Number of components
+for varying variables 2.11.10
+MAX VARYING VECTORS Z+ GetIntegerv 15
+Number of vectors for
+varying variables 2.11.10
+MAX COMBINED TEXTURE IMAGE UNITS Z+ GetIntegerv 80
+Total number of texture
+units accessible by the
+GL
+2.11.11
+MAX SUBROUTINES Z+ GetIntegerv 256
+Maximum number of
+subroutines per shader
+stage
+2.11.8
+MAX SUBROUTINE UNIFORM LOCATIONS Z+ GetIntegerv 1024
+Maximum number of
+subroutine uniform
+locations per stage
+2.11.8
+MAX COMBINED VERTEX UNIFORM COMPONENTS Z+ GetIntegerv y
+No. of words for vertex
+shader uniform variables
+in all uniform blocks (including
+default)
+2.11.7
+MAX COMBINED GEOMETRY UNIFORM COMPONENTS Z+ GetIntegerv y
+No. of words for geometry
+shader uniform
+variables in all uniform
+blocks (including
+default)
+2.11.7
+MAX COMBINED TESS CONTROL UNIFORM COMPONENTS Z+ GetIntegerv y
+No. of words for TCS
+uniform variables in all
+uniform blocks (including
+default)
+2.12.1
+MAX COMBINED TESS EVALUATION UNIFORM COMPONENTS Z+ GetIntegerv y
+No. of words for TES
+uniform variables in all
+uniform blocks (including
+default)
+2.12.3
+MAX COMBINED FRAGMENT UNIFORM COMPONENTS Z+ GetIntegerv y
+No. of words for fragment
+shader uniform
+variables in all uniform
+blocks (including
+default)
+2.11.7
+MAX SAMPLE MASK WORDS Z+ GetIntegerv 1
+Maximum number of
+sample mask words 4.1.3
+MAX COLOR TEXTURE SAMPLES Z+ GetIntegerv 1
+Maximum number of
+samples in a color
+multisample texture
+4.1.3
+MAX DEPTH TEXTURE SAMPLES Z+ GetIntegerv 1
+Maximum number
+of samples in a
+depth/stencil multisample
+texture
+4.1.3
+MAX INTEGER SAMPLES Z+ GetIntegerv 1
+Maximum number of
+samples in integer format
+multisample buffers
+4.4.2
+QUERY COUNTER BITS 3  Z+ GetQueryiv see 6.1.7
+Asynchronous query
+counter bits 6.1.7
+MAX SERVER WAIT TIMEOUT Z+ GetInteger64v 0
+Maximum WaitSync
+timeout interval 5.3.1
+MIN FRAGMENT INTERPOLATION OFFSET R GetFloatv -0.5
+Furthest negative offset
+for interpolate-
+AtOffset
+3.9.1
+MAX FRAGMENT INTERPOLATION OFFSET R GetFloatv +0.5
+Furthest positive offset
+for interpolate-
+AtOffset
+3.9.1
+FRAGMENT INTERPOLATION OFFSET BITS Z+ GetIntegerv 4
+Subpixel bits for
+interpolate-
+AtOffset
+3.9.1
+MAX TRANSFORM FEEDBACK INTERLEAVED COMPONENTS Z+ GetIntegerv 64
+Max no. of components
+to write to a single buffer
+in interleaved mode
+2.17
+MAX TRANSFORM FEEDBACK SEPARATE ATTRIBS Z+ GetIntegerv 4
+Max no. of separate attributes
+or vayings that
+can be captured in transform
+feedback
+2.17
+MAX TRANSFORM FEEDBACK SEPARATE COMPONENTS Z+ GetIntegerv 4
+Max no. of components
+per attribute or varying in
+separate mode
+2.17
+MAX TRANSFORM FEEDBACK BUFFERS Z+ GetIntegerv 4
+Max no. of buffer objs
+to write with transform
+feedback
+2.17
+MAX DRAW BUFFERS Z+ GetIntegerv 8
+Maximum number of active draw
+buffers 4.2.1
+MAX DUAL SOURCE DRAW BUFFERS Z+ GetIntegerv 1
+Maximum number of active draw
+buffers when using dual-source
+blending
+4.1.7
+DOUBLEBUFFER B GetBooleanv – True if front & back buffers exist 4.2.1
+STEREO B GetBooleanv – True if left & right buffers exist 6
+SAMPLE BUFFERS Z+ GetIntegerv 0 Number of multisample buffers 3.3.1
+SAMPLES Z+ GetIntegerv 0 Coverage mask size 3.3.1
+SAMPLE POSITION n  2  R[0;1] GetMultisamplefv – Explicit sample positions 3.3.1
+MAX COLOR ATTACHMENTS Z+ GetIntegerv 8
+Maximum number of FBO attachment
+points for color buffers 4.4.2
+MAX SAMPLES Z+ GetIntegerv 4
+Maximum number of samples supported
+for multisampling 4.4.2
+IMPLEMENTATION COLOR READ TYPE Z+ GetIntegerv - Implementation preferred pixel type 4.3.1
+IMPLEMENTATION COLOR READ FORMAT Z+ GetIntegerv -
+Implementation preferred pixel format
+4.3.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

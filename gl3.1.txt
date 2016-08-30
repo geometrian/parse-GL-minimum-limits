@@ -1,0 +1,195 @@
+MAX CLIP DISTANCES Z+ GetIntegerv 6
+Maximum number of user clipping
+planes 2.17
+SUBPIXEL BITS Z+ GetIntegerv 4
+Number of bits of subpixel precision
+in screen xw and yw
+3
+MAX 3D TEXTURE SIZE Z+ GetIntegerv 256
+Maximum 3D texture image dimension
+3.8.1
+MAX TEXTURE SIZE Z+ GetIntegerv 1024
+Maximum 2D/1D texture image dimension
+3.8.1
+MAX ARRAY TEXTURE LAYERS Z+ GetIntegerv 256
+Maximum number of layers for texture
+arrays 3.8.1
+MAX TEXTURE LOD BIAS R+ GetFloatv 2.0
+Maximum absolute texture level of
+detail bias 3.8.8
+MAX CUBE MAP TEXTURE SIZE Z+ GetIntegerv 1024
+Maximum cube map texture image
+dimension 3.8.1
+MAX RENDERBUFFER SIZE Z+ GetIntegerv 1024
+Maximum width and height of renderbuffers
+4.4.2
+MAX VIEWPORT DIMS 2  Z+ GetIntegerv see 2.12.1
+Maximum viewport
+dimensions 2.12.1
+POINT SIZE RANGE 2  R+ GetFloatv 1,1
+Range (lo to hi) of point
+sprite sizes 3.4
+POINT SIZE GRANULARITY R+ GetFloatv –
+Point sprite size granularity
+3.4
+ALIASED LINE WIDTH RANGE 2  R+ GetFloatv 1,1
+Range (lo to hi) of aliased
+line widths 3.5
+SMOOTH LINE WIDTH RANGE (v1.1: LINE WIDTH RANGE) 2  R+ GetFloatv 1,1
+Range (lo to hi) of antialiased
+line widths 3.5
+SMOOTH LINE WIDTH GRANULARITY (v1.1: LINE WIDTH GRANULARITY) R+ GetFloatv –
+Antialiased line width
+granularity 3.5
+MAX ELEMENTS INDICES Z+ GetIntegerv –
+Recommended
+max. number of
+DrawRangeElements
+indices
+2.8
+MAX ELEMENTS VERTICES Z+ GetIntegerv –
+Recommended
+max. number of
+DrawRangeElements
+vertices
+2.8
+COMPRESSED TEXTURE FORMATS 4  Z+ GetIntegerv -
+Enumerated compressed
+texture formats 3.8.3
+NUM COMPRESSED TEXTURE FORMATS Z GetIntegerv 4
+Number of compressed
+texture formats 3.8.3
+MAX TEXTURE BUFFER SIZE Z+ GetIntegerv 65536
+No. of addressable texels
+for buffer textures 3.8.4
+MAX RECTANGLE TEXTURE SIZE Z+ GetIntegerv 1024
+Max. width & height of
+rectangular textures 3.8.1
+QUERY COUNTER BITS 3  Z+ GetQueryiv see 6.1.6
+Asynchronous query
+counter bits 6.1.6
+EXTENSIONS 0  S GetStringi –
+Supported individual extension
+names 6.1.4
+NUM EXTENSIONS Z+ GetIntegerv –
+Number of individual extension
+names 6.1.4
+MAJOR VERSION Z+ GetIntegerv –
+Major version number
+supported 6.1.4
+MINOR VERSION Z+ GetIntegerv –
+Minor version number
+supported 6.1.4
+CONTEXT FLAGS Z+ GetIntegerv –
+Context full/forwardcompatible
+flag 6.1.4
+RENDERER S GetString – Renderer string 6.1.4
+SHADING LANGUAGE VERSION S GetString –
+Shading Language version
+supported 6.1.4
+VENDOR S GetString – Vendor string 6.1.4
+VERSION S GetString –
+OpenGL version supported
+6.1.4
+MAX VERTEX ATTRIBS Z+ GetIntegerv 16
+Number of active vertex
+attributes 2.7
+MAX VERTEX UNIFORM COMPONENTS Z+ GetIntegerv 1024
+Number of components
+for vertex shader uniform
+variables
+2.11.4
+MAX VARYING COMPONENTS Z+ GetIntegerv 64
+Number of components
+for varying variables 2.11.6
+MAX COMBINED TEXTURE IMAGE UNITS Z+ GetIntegerv 32
+Total number of texture
+units accessible by the
+GL
+2.11.7
+MAX VERTEX TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+Number of texture image
+units accessible by a vertex
+shader
+2.11.7
+MAX TEXTURE IMAGE UNITS Z+ GetIntegerv 16
+Number of texture image
+units accessible by fragment
+processing
+2.11.7
+MAX FRAGMENT UNIFORM COMPONENTS Z+ GetIntegerv 1024
+Number of components
+for frag. shader uniform
+variables
+3.9.1
+MIN PROGRAM TEXEL OFFSET Z GetIntegerv -8
+Minimum texel offset allowed
+in lookup 2.11.7
+MAX PROGRAM TEXEL OFFSET Z GetIntegerv 7
+Maximum texel offset allowed
+in lookup 2.11.7
+MAX VERTEX UNIFORM BLOCKS Z+ GetIntegerv 12
+Max number of vertex
+uniform buffers per program
+2.11.4
+MAX FRAGMENT UNIFORM BLOCKS Z+ GetIntegerv 12
+Max number of fragment
+uniform buffers per program
+2.11.4
+MAX COMBINED UNIFORM BLOCKS Z+ GetIntegerv 24
+Max number of uniform
+buffers per program 2.11.4
+MAX UNIFORM BUFFER BINDINGS Z+ GetIntegerv 24
+Max number of uniform
+buffer binding points on
+the context
+2.11.4
+MAX UNIFORM BLOCK SIZE Z+ GetIntegerv 16384
+Max size in basic machine
+units of a uniform
+block
+2.11.4
+UNIFORM BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 1
+Minimum required alignment
+for uniform buffer
+sizes and offsets
+2.11.4
+MAX VERTEX UNIFORM COMPONENTS Z+ GetIntegerv 1
+Number of words for vertex
+shader uniform variables
+in default uniform
+block
+2.11.4
+MAX FRAGMENT UNIFORM COMPONENTS Z+ GetIntegerv 1
+Number of words for
+fragment shader uniform
+variables in default uniform
+block
+2.11.4
+MAX COMBINED VERTEX UNIFORM COMPONENTS Z+ GetIntegerv 1
+Number of words for
+vertex shader uniform
+variables in all uniform
+blocks (including
+default)
+2.11.4
+MAX COMBINED FRAGMENT UNIFORM COMPONENTS Z+ GetIntegerv 1
+Number of words for
+fragment shader uniform
+variables in all uniform
+blocks (including
+default)
+2.11.4
+MAX DRAW BUFFERS Z+ GetIntegerv 8
+Maximum number of active draw
+buffers 4.2.1
+DOUBLEBUFFER B GetBooleanv – True if front & back buffers exist 4.2.1
+STEREO B GetBooleanv – True if left & right buffers exist 6
+SAMPLE BUFFERS Z+ GetIntegerv 0 Number of multisample buffers 3.3.1
+SAMPLES Z+ GetIntegerv 0 Coverage mask size 3.3.1
+MAX COLOR ATTACHMENTS Z+ GetIntegerv 8
+Maximum number of FBO attachment
+points for color buffers 4.4.2
+MAX SAMPLES Z+ GetIntegerv 4
+Maximum number of samples supported
+for multisampling 4.4.2
