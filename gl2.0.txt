@@ -1,158 +1,158 @@
-MAX LIGHTS Z+ GetIntegerv 8 Maximum number of lights 2.14.1 –
+MAX LIGHTS Z+ GetIntegerv 8 Maximum number of lights 2.14.1 â€“
 MAX CLIP PLANES Z+ GetIntegerv 6 Maximum number of user clipping
 planes
-2.12 –
-MAX COLOR MATRIX STACK DEPTH Z+ GetIntegerv 2 Maximum color matrix stack depth 3.6.3 –
-MAX MODELVIEW STACK DEPTH Z+ GetIntegerv 32 Maximum model-view stack depth 2.11.2 –
+2.12 â€“
+MAX COLOR MATRIX STACK DEPTH Z+ GetIntegerv 2 Maximum color matrix stack depth 3.6.3 â€“
+MAX MODELVIEW STACK DEPTH Z+ GetIntegerv 32 Maximum model-view stack depth 2.11.2 â€“
 MAX PROJECTION STACK DEPTH Z+ GetIntegerv 2 Maximum projection matrix stack
 depth
-2.11.2 –
+2.11.2 â€“
 MAX TEXTURE STACK DEPTH Z+ GetIntegerv 2 Maximum number depth of texture
 matrix stack
-2.11.2 –
+2.11.2 â€“
 SUBPIXEL BITS Z+ GetIntegerv 4 Number of bits of subpixel
 precision in screen xw and yw
-3 –
+3 â€“
 MAX 3D TEXTURE SIZE Z+ GetIntegerv 16 Maximum 3D texture image
 dimension
-3.8.1 –
+3.8.1 â€“
 MAX TEXTURE SIZE Z+ GetIntegerv 64 Maximum 2D/1D texture image
 dimension
-3.8.1 –
+3.8.1 â€“
 MAX TEXTURE LOD BIAS R+ GetFloatv 2.0 Maximum absolute texture level of
 detail bias
-3.8.8 –
+3.8.8 â€“
 MAX CUBE MAP TEXTURE SIZE Z+ GetIntegerv 16 Maximum cube map texture image
 dimension
-3.8.1 –
+3.8.1 â€“
 MAX PIXEL MAP TABLE Z+ GetIntegerv 32 Maximum size of a PixelMap
 translation table
-3.6.3 –
+3.6.3 â€“
 MAX NAME STACK DEPTH Z+ GetIntegerv 64 Maximum selection name stack
 depth
-5.2 –
-MAX LIST NESTING Z+ GetIntegerv 64 Maximum display list call nesting 5.4 –
+5.2 â€“
+MAX LIST NESTING Z+ GetIntegerv 64 Maximum display list call nesting 5.4 â€“
 MAX EVAL ORDER Z+ GetIntegerv 8 Maximum evaluator polynomial
 order
-5.1 –
-MAX VIEWPORT DIMS 2 × Z+ GetIntegerv see 2.11.1 Maximum viewport dimensions 2.11.1 –
+5.1 â€“
+MAX VIEWPORT DIMS 2 Ã— Z+ GetIntegerv see 2.11.1 Maximum viewport dimensions 2.11.1 â€“
 MAX ATTRIB STACK DEPTH Z+ GetIntegerv 16 Maximum depth of the
 server attribute stack
-6 –
+6 â€“
 MAX CLIENT ATTRIB STACK DEPTH Z+ GetIntegerv 16 Maximum depth of the
 client attribute stack
-6 –
-– 3 × Z+ - 32 Maximum size of a color
+6 â€“
+â€“ 3 Ã— Z+ - 32 Maximum size of a color
 table
-3.6.3 –
-– Z+ - 32 Maximum size of the
+3.6.3 â€“
+â€“ Z+ - 32 Maximum size of the
 histogram table
-3.6.3 –
+3.6.3 â€“
 AUX BUFFERS Z+ GetIntegerv 0 Number of auxiliary
 buffers
-4.2.1 –
-RGBA MODE B GetBooleanv – True if color buffers store
+4.2.1 â€“
+RGBA MODE B GetBooleanv â€“ True if color buffers store
 rgba
-2.7 –
-INDEX MODE B GetBooleanv – True if color buffers store
+2.7 â€“
+INDEX MODE B GetBooleanv â€“ True if color buffers store
 indexes
-2.7 –
-DOUBLEBUFFER B GetBooleanv – True if front & back
+2.7 â€“
+DOUBLEBUFFER B GetBooleanv â€“ True if front & back
 buffers exist
-4.2.1 –
-STEREO B GetBooleanv – True if left & right buffers
+4.2.1 â€“
+STEREO B GetBooleanv â€“ True if left & right buffers
 exist
-6 –
-ALIASED POINT SIZE RANGE 2 × R+ GetFloatv 1,1 Range (lo to hi) of aliased
+6 â€“
+ALIASED POINT SIZE RANGE 2 Ã— R+ GetFloatv 1,1 Range (lo to hi) of aliased
 point sizes
-3.3 –
-SMOOTH POINT SIZE RANGE (v1.1: POINT SIZE RANGE) 2 × R+ GetFloatv 1,1 Range (lo to hi) of
+3.3 â€“
+SMOOTH POINT SIZE RANGE (v1.1: POINT SIZE RANGE) 2 Ã— R+ GetFloatv 1,1 Range (lo to hi) of
 antialiased point sizes
-3.3 –
-SMOOTH POINT SIZE GRANULARITY (v1.1: POINT SIZE GRANULARITY) R+ GetFloatv – Antialiased point size
+3.3 â€“
+SMOOTH POINT SIZE GRANULARITY (v1.1: POINT SIZE GRANULARITY) R+ GetFloatv â€“ Antialiased point size
 granularity
-3.3 –
-ALIASED LINE WIDTH RANGE 2 × R+ GetFloatv 1,1 Range (lo to hi) of aliased
+3.3 â€“
+ALIASED LINE WIDTH RANGE 2 Ã— R+ GetFloatv 1,1 Range (lo to hi) of aliased
 line widths
-3.4 –
-SMOOTH LINE WIDTH RANGE (v1.1: LINE WIDTH RANGE) 2 × R+ GetFloatv 1,1 Range (lo to hi) of
+3.4 â€“
+SMOOTH LINE WIDTH RANGE (v1.1: LINE WIDTH RANGE) 2 Ã— R+ GetFloatv 1,1 Range (lo to hi) of
 antialiased line widths
-3.4 –
-SMOOTH LINE WIDTH GRANULARITY (v1.1: LINE WIDTH GRANULARITY) R+ GetFloatv – Antialiased line width
+3.4 â€“
+SMOOTH LINE WIDTH GRANULARITY (v1.1: LINE WIDTH GRANULARITY) R+ GetFloatv â€“ Antialiased line width
 granularity
-3.4 –
-MAX CONVOLUTION WIDTH 3 × Z+ GetConvolutionParameteriv 3 Maximum width of
+3.4 â€“
+MAX CONVOLUTION WIDTH 3 Ã— Z+ GetConvolutionParameteriv 3 Maximum width of
 convolution filter
-4.3 –
-MAX CONVOLUTION HEIGHT 2 × Z+ GetConvolutionParameteriv 3 Maximum height of
+4.3 â€“
+MAX CONVOLUTION HEIGHT 2 Ã— Z+ GetConvolutionParameteriv 3 Maximum height of
 convolution filter
-4.3 –
-MAX ELEMENTS INDICES Z+ GetIntegerv – Recommended
+4.3 â€“
+MAX ELEMENTS INDICES Z+ GetIntegerv â€“ Recommended
 maximum number of
 DrawRangeElements
 indices
-2.8 –
-MAX ELEMENTS VERTICES Z+ GetIntegerv – Recommended
+2.8 â€“
+MAX ELEMENTS VERTICES Z+ GetIntegerv â€“ Recommended
 maximum number of
 DrawRangeElements
 vertices
-2.8 –
+2.8 â€“
 SAMPLE BUFFERS Z+ GetIntegerv 0 Number of multisample
 buffers
-3.2.1 –
-SAMPLES Z+ GetIntegerv 0 Coverage mask size 3.2.1 –
-COMPRESSED TEXTURE FORMATS 0 × Z GetIntegerv - Enumerated compressed
+3.2.1 â€“
+SAMPLES Z+ GetIntegerv 0 Coverage mask size 3.2.1 â€“
+COMPRESSED TEXTURE FORMATS 0 Ã— Z GetIntegerv - Enumerated compressed
 texture formats
-3.8.3 –
+3.8.3 â€“
 NUM COMPRESSED TEXTURE FORMATS Z GetIntegerv 0 Number of enumerated
 compressed texture
 formats
-3.8.3 –
+3.8.3 â€“
 QUERY COUNTER BITS Z+ GetQueryiv see 6.1.12 Occlusion query counter
 bits
-6.1.12 –
-EXTENSIONS S GetString – Supported extensions 6.1.11 –
-RENDERER S GetString – Renderer string 6.1.11 –
-SHADING LANGUAGE VERSION S GetString – Shading Language
+6.1.12 â€“
+EXTENSIONS S GetString â€“ Supported extensions 6.1.11 â€“
+RENDERER S GetString â€“ Renderer string 6.1.11 â€“
+SHADING LANGUAGE VERSION S GetString â€“ Shading Language
 version supported
-6.1.11 –
-VENDOR S GetString – Vendor string 6.1.11 –
-VERSION S GetString – OpenGL version
+6.1.11 â€“
+VENDOR S GetString â€“ Vendor string 6.1.11 â€“
+VERSION S GetString â€“ OpenGL version
 supported
-6.1.11 –
+6.1.11 â€“
 MAX TEXTURE UNITS Z+ GetIntegerv 2 Number of
 fixed-function texture
 units
-2.6 –
+2.6 â€“
 MAX VERTEX ATTRIBS Z+ GetIntegerv 16 Number of active vertex
 attributes
-2.7 –
+2.7 â€“
 MAX VERTEX UNIFORM COMPONENTS Z+ GetIntegerv 512 Number of words for
 vertex shader uniform
 variables
-2.15.3 –
+2.15.3 â€“
 MAX VARYING FLOATS Z+ GetIntegerv 32 Number of floats for
 varying variables
-2.15.3 –
+2.15.3 â€“
 MAX COMBINED TEXTURE IMAGE UNITS Z+ GetIntegerv 2 Total number of texture
 units accessible by the
 GL
-2.15.4 –
+2.15.4 â€“
 MAX VERTEX TEXTURE IMAGE UNITS Z+ GetIntegerv 0 Number of texture image
 units accessible by a
 vertex shader
-2.15.4 –
+2.15.4 â€“
 MAX TEXTURE IMAGE UNITS Z+ GetIntegerv 2 Number of texture image
 units accessible by
 fragment processing
-2.15.4 –
+2.15.4 â€“
 MAX TEXTURE COORDS Z+ GetIntegerv 2 Number of texture
 coordinate sets
-2.7 –
+2.7 â€“
 MAX FRAGMENT UNIFORM COMPONENTS Z+ GetIntegerv 64 Number of words for
 frag. shader uniform
 variables
-3.11.1 –
+3.11.1 â€“
 MAX DRAW BUFFERS Z+ GetIntegerv 1+ Maximum number of
 active draw buffers
-4.2.1 –
+4.2.1 â€“

@@ -1,116 +1,54 @@
-DRAW BUFFERi 8  E GetIntegerv see sec. 17.4.1
-Draw buffer selected for
-color output i
-17.4.1
-READ BUFFER E GetIntegerv see sec. 18.2 Read source buffer y 18.2
-FRAMEBUFFER DEFAULT WIDTH Z+ GetFramebufferParameteriv 0
-default width of framebuffer
-w/o attachments 9.2.1
-FRAMEBUFFER DEFAULT HEIGHT Z+ GetFramebufferParameteri 0
-default height of framebuffer
-w/o attachments 9.2.1
-FRAMEBUFFER DEFAULT LAYERS Z+ GetFramebufferParameteri 0
-default layer count of
-framebuffer w/o attachments
-9.2.1
-FRAMEBUFFER DEFAULT SAMPLES Z+ GetFramebufferParameteri 0
-default sample count of
-framebuffer w/o attachments
-9.2.1
-FRAMEBUFFER DEFAULT FIXED SAMPLE LOCATIONS B GetFramebufferParameteri FALSE
-default sample location
-pattern of framebuffer
-w/o attachments
-9.2.1
-– S GetObjectLabel empty Debug label 20.9
-FRAMEBUFFER ATTACHMENT OBJECT TYPE E GetFramebufferAttachmentParameteriv NONE
-Type of image attached
-to framebuffer attachment
-point
-9.2.2
-FRAMEBUFFER ATTACHMENT OBJECT NAME Z+ GetFramebufferAttachmentParameteriv 0
-Name of object attached
-to framebuffer
-attachment point
-9.2.2
-FRAMEBUFFER ATTACHMENT TEXTURE LEVEL Z+ GetFramebufferAttachmentParameteriv 0
-Mipmap level of texture
-image attached, if object
-attached is texture
-9.2.8
-FRAMEBUFFER ATTACHMENT TEXTURE CUBE MAP FACE E GetFramebufferAttachmentParameteriv NONE
-Cubemap face of texture
-image attached, if object
-attached is cubemap texture
-9.2.8
-FRAMEBUFFER ATTACHMENT TEXTURE LAYER Z GetFramebufferAttachmentParameteriv 0
-Layer of texture image
-attached, if object attached
-is 3D texture
-9.2.8
-FRAMEBUFFER ATTACHMENT LAYERED B GetFramebufferAttachmentParameteriv FALSE
-Framebuffer attachment
-is layered 9.8
-FRAMEBUFFER ATTACHMENT COLOR ENCODING E GetFramebufferAttachmentParameteriv -
-Encoding of components
-in the attached image 9.2.3
-FRAMEBUFFER ATTACHMENT COMPONENT TYPE E GetFramebufferAttachmentParameteriv -
-Data type of components
-in the attached image 9.2.3
-FRAMEBUFFER ATTACHMENT RED SIZE Z+ GetFramebufferAttachmentParameteriv -
-FRAMEBUFFER ATTACHMENT GREEN SIZE Z+ GetFramebufferAttachmentParameteriv -
-FRAMEBUFFER ATTACHMENT BLUE SIZE Z+ GetFramebufferAttachmentParameteriv -
-FRAMEBUFFER ATTACHMENT ALPHA SIZE Z+ GetFramebufferAttachmentParameteriv -
-FRAMEBUFFER ATTACHMENT DEPTH SIZE Z+ GetFramebufferAttachmentParameteriv -
-FRAMEBUFFER ATTACHMENT STENCIL SIZE Z+ GetFramebufferAttachmentParameteriv -
-9.2.3
-MAX CLIP DISTANCES Z+ GetIntegerv 8 Max no. of user clipping planes 13.5
+CONTEXT RELEASE BEHAVIOR E GetIntegerv See sec. 22.2
+Flush behavior when context is released
+22.2
+MAX CLIP DISTANCES Z+ GetIntegerv 8 Max. no. of user clipping planes 13.6
+MAX CULL DISTANCES Z+ GetIntegerv 8 Max. no. of user culling planes 13.6
+MAX COMBINED CLIP AND CULL DISTANCES Z+ GetIntegerv 8 Max. combined no. of user clipping 13.6
 SUBPIXEL BITS Z+ GetIntegerv 4
 No. of bits of subpixel precision in
 screen xw and yw
 14
-MAX ELEMENT INDEX Z+ GetInteger64v 232 ?? 1 Max element index 10.5
-IMPLEMENTATION COLOR READ FORMAT E GetIntegerv RGBA
-Implementation preferred pixel format
-18.2
-IMPLEMENTATION COLOR READ TYPE E GetIntegerv UNSIGNED_BYTE Implementation preferred pixel type 18.2
+MAX ELEMENT INDEX Z+ GetInteger64v 232 􀀀 1 Max. element index 10.4
 PRIMITIVE RESTART FOR PATCHES SUPPORTED B GetBooleanv –
 Primitive restart support for
 PATCHES
-10.3.5
-MAX 3D TEXTURE SIZE Z+ GetIntegerv 2048 Max 3D texture image dimension 8.5
+10.3.6
+MAX 3D TEXTURE SIZE Z+ GetIntegerv 2048 Max. 3D texture image dimension 8.5
 MAX TEXTURE SIZE Z+ GetIntegerv 16384
-Max 2D/1D texture image dimension
+Max. 2D/1D texture image dimension
 8.5
-MAX ARRAY TEXTURE LAYERS Z+ GetIntegerv 2048 Max no. of layers for texture arrays 8.5
+MAX ARRAY TEXTURE LAYERS Z+ GetIntegerv 2048 Max. no. of layers for texture arrays 8.5
 MAX TEXTURE LOD BIAS R+ GetFloatv 2.0
-Max absolute texture level of detail
+Max. absolute texture level-ofdetail
 bias 8.14
 MAX CUBE MAP TEXTURE SIZE Z+ GetIntegerv 16384
-Max cube map texture image dimension
+Max. cube map texture image dimension
 8.5
 MAX RENDERBUFFER SIZE Z+ GetIntegerv 16384
-Max width and height of renderbuffers
+Max. width and height of renderbuffers
 9.2.4
-MAX VIEWPORT DIMS 2  Z+ GetFloatv see 13.6.1 Max viewport dimensions 13.6.1
+MAX TEXTURE MAX ANISOTROPY R GetFloatv 16.0
+Limit of maximum degree of
+anisotropy 8.14
+MAX VIEWPORT DIMS 2  Z+ GetFloatv See sec. 13.7.1 Max. viewport dimensions 13.7.1
 MAX VIEWPORTS Z+ GetIntegerv 16
-Max no. of active viewports
-13.6.1
+Max. no. of active viewports
+13.7.1
 VIEWPORT SUBPIXEL BITS Z+ GetIntegerv 0
 No. of bits of subpixel
 precision for viewport
 bounds
-13.6.1
+13.7.1
 VIEWPORT BOUNDS RANGE 2  R GetFloatv y
 Viewport bounds range
 [min; max] y (at least
-[??32768; 32767])
-13.6.1
-LAYER PROVOKING VERTEX E GetIntegerv see 11.3.4
+[􀀀32768; 32767])
+13.7.1
+LAYER PROVOKING VERTEX E GetIntegerv See sec. 11.3.4
 Vertex convention followed
 by gl_Layer
 11.3.4
-VIEWPORT INDEX PROVOKING VERTEX E GetIntegerv see 11.3.4
+VIEWPORT INDEX PROVOKING VERTEX E GetIntegerv See sec. 11.3.4
 Vertex convention
 followed by gl_-
 ViewportIndex
@@ -139,9 +77,11 @@ Recommended max no. of
 DrawRangeElements vertices
 10.3
 MAX VERTEX ATTRIB RELATIVE OFFSET Z GetIntegerv 2047
-Max offset added to vertex
+Max. offset added to vertex
 buffer binding offset 10.3
-MAX VERTEX ATTRIB BINDINGS Z16 GetIntegerv 16 Max no. of vertex buffers 10.3
+MAX VERTEX ATTRIB BINDINGS Z16 GetIntegerv 16
+Max. no. of vertex
+buffers 10.3
 MAX VERTEX ATTRIB STRIDE Z GetIntegerv 2048
 Max. vertex attribute
 stride 10.3
@@ -155,7 +95,7 @@ MAX TEXTURE BUFFER SIZE Z+ GetIntegerv 65536
 No. of addressable texels
 for buffer textures 8.9
 MAX RECTANGLE TEXTURE SIZE Z+ GetIntegerv 16384
-Max width & height of
+Max. width & height of
 rectangle textures 8.5
 NUM PROGRAM BINARY FORMATS Z+ GetIntegerv 0
 No. of program binary
@@ -169,7 +109,7 @@ No. of shader binary formats
 SHADER BINARY FORMATS 0  Z+ GetIntegerv -
 Enumerated shader binary
 formats 7.2
-SHADER COMPILER B GetBooleanv -
+SHADER COMPILER B GetBooleanv TRUE
 Shader compiler supported
 7
 MIN MAP BUFFER ALIGNMENT Z+ GetIntegerv 64
@@ -177,8 +117,8 @@ Min byte alignment of
 pointers returned by
 Map*Buffer
 6.3
-TEXTURE BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 1
-Min required alignment
+TEXTURE BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 256y
+Min. required alignment
 for texture buffer offsets 8.9
 MAJOR VERSION Z+ GetIntegerv –
 Major version no. supported
@@ -189,6 +129,7 @@ Minor version no. supported
 CONTEXT FLAGS Z+ GetIntegerv –
 Context full/forwardcompatible
 flag 22.2
+CONTEXT PROFILE MASK Z+ GetIntegerv – Context profile mask 22.2
 EXTENSIONS n  S GetStringi –
 Supported individual extension
 names 22.2
@@ -205,6 +146,12 @@ versions 22.2
 NUM SHADING LANGUAGE VERSIONS Z+ GetIntegerv 3
 No. of supported Shading
 Language versions 22.2
+SPIR V EXTENSIONS n  S GetStringi -
+Supported SPIR-V extension
+names 22.2
+NUM SPIR V EXTENSIONS Z+ GetIntegerv 0
+No. of supported SPIR-V
+extension names 22.2
 VENDOR S GetString – Vendor string 22.2
 VERSION S GetString –
 OpenGL version supported
@@ -221,10 +168,10 @@ MAX VERTEX UNIFORM VECTORS Z+ GetIntegerv 256
 No. of vectors for vertex
 shader uniform variables 7.6
 MAX VERTEX UNIFORM BLOCKS Z+ GetIntegerv 14
-Max no. of vertex uniform
+Max. no. of vertex uniform
 buffers per program 7.6.2
 MAX VERTEX OUTPUT COMPONENTS Z+ GetIntegerv 64
-Max no. of components
+Max. no. of components
 of outputs written by a
 vertex shader
 11.1.2.1
@@ -249,9 +196,9 @@ blocks accessed by a vertex
 shader
 7.8
 MAX TESS GEN LEVEL Z+ GetIntegerv 64
-Max level supported by
+Max. level supported by
 tess. primitive generator 11.2.2
-MAX PATCH VERTICES Z+ GetIntegerv 32 Max patch size 10.1
+MAX PATCH VERTICES Z+ GetIntegerv 32 Max. patch size 10.1
 MAX TESS CONTROL UNIFORM COMPONENTS Z+ GetIntegerv 1024
 No. of words for tess.
 control shader (TCS)
@@ -267,8 +214,8 @@ MAX TESS PATCH COMPONENTS Z+ GetIntegerv 120
 No. components for TCS
 per-patch outputs 11.2.1.2
 MAX TESS CONTROL TOTAL OUTPUT COMPONENTS Z+ GetIntegerv 4096
-No. components for TCS
-per-patch outputs 11.2.1.2
+Total no. components for
+TCS outputs 11.2.1.2
 MAX TESS CONTROL INPUT COMPONENTS Z+ GetIntegerv 128
 No. components for TCS
 per-vertex inputs 11.2.1.2
@@ -316,27 +263,27 @@ No. of shader storage
 blocks accessed by a tess.
 evaluation shader
 7.8
-MAX GEOMETRY UNIFORM COMPONENTS Z+ GetIntegerv 512
+MAX GEOMETRY UNIFORM COMPONENTS Z+ GetIntegerv 1024
 No. of components
 for geometry shader (GS)
 uniform variables
 11.3.3
 MAX GEOMETRY UNIFORM BLOCKS Z+ GetIntegerv 14
-Max no. of GS uniform
+Max. no. of GS uniform
 buffers per program 7.6.2
 MAX GEOMETRY INPUT COMPONENTS Z+ GetIntegerv 64
-Max no. of components
+Max. no. of components
 of inputs read by a GS 11.3.4.4
 MAX GEOMETRY OUTPUT COMPONENTS Z+ GetIntegerv 128
-Max no. of components
+Max. no. of components
 of outputs written by a
 GS
 11.3.4.5
 MAX GEOMETRY OUTPUT VERTICES Z+ GetIntegerv 256
-Max no. of vertices that
+Max. no. of vertices that
 any GS can emit 11.3.4
 MAX GEOMETRY TOTAL OUTPUT COMPONENTS Z+ GetIntegerv 1024
-Max no. of total components
+Max. no. of total components
 (all vertices) of active
 outputs that a GS can
 emit
@@ -345,9 +292,9 @@ MAX GEOMETRY TEXTURE IMAGE UNITS Z+ GetIntegerv 16
 No. of texture image
 units accessible by a GS 11.3.4
 MAX GEOMETRY SHADER INVOCATIONS Z+ GetIntegerv 32
-Max supported GS invocation
+Max. supported GS invocation
 count 11.3.4.2
-MAX VERTEX STREAMS Z+ GetInteger 4
+MAX VERTEX STREAMS Z+ GetIntegerv 4
 Total no. of vertex
 streams 11.3.4.2
 MAX GEOMETRY ATOMIC COUNTER BUFFERS Z+ GetIntegerv 0
@@ -368,10 +315,10 @@ MAX FRAGMENT UNIFORM VECTORS Z+ GetIntegerv 256
 No. of vectors for FS uniform
 variables 15.1
 MAX FRAGMENT UNIFORM BLOCKS Z+ GetIntegerv 14
-Max no. of FS uniform
+Max. no. of FS uniform
 buffers per program 7.6.2
 MAX FRAGMENT INPUT COMPONENTS Z+ GetIntegerv 128
-Max no. of components
+Max. no. of components
 of inputs read by a FS 15.2.2
 MAX TEXTURE IMAGE UNITS Z+ GetIntegerv 16
 No. of texture image
@@ -381,7 +328,7 @@ Min texel offset for
 textureGather
 8.14.1
 MAX PROGRAM TEXTURE GATHER OFFSET Z+ GetIntegerv 7
-Max texel offset for
+Max. texel offset for
 textureGather
 8.14.1
 MAX FRAGMENT ATOMIC COUNTER BUFFERS Z+ GetIntegerv 1
@@ -394,26 +341,28 @@ MAX FRAGMENT SHADER STORAGE BLOCKS Z+ GetIntegerv 8
 No. of shader storage
 blocks accessed by a FS 7.8
 MAX COMPUTE WORK GROUP COUNT 3  Z+ GetIntegeri v 65535
-Max no. of work groups
+Max. no. of work groups
 (WG) that may be dispatched
 by a single dispatch
 command (per dimension)
 19
 MAX COMPUTE WORK GROUP SIZE 3  Z+ GetIntegeri v 1024 (x, y), 64 (z)
-Max local size of a computeWG(
+Max. local size of a computeWG(
 per dimension) 19
 MAX COMPUTE WORK GROUP INVOCATIONS Z+ GetIntegerv 1024
-Max total compute
+Max. total compute
 shader (CS) invocations
 in a single local WG
 19
 MAX COMPUTE UNIFORM BLOCKS Z+ GetIntegerv 14
-Max no. of uniform
+Max. no. of uniform
 blocks per compute program
 7.6.2
 MAX COMPUTE TEXTURE IMAGE UNITS Z+ GetIntegerv 16
-Max no. of texture image
-units accessible by a CS 11.1.3.5
+Max. no. of texture image
+units accessible by a
+CS
+11.1.3.5
 MAX COMPUTE ATOMIC COUNTER BUFFERS Z+ GetIntegerv 8
 No. of atomic counter
 buffers accessed by a CS 7.7
@@ -421,12 +370,12 @@ MAX COMPUTE ATOMIC COUNTERS Z+ GetIntegerv 8
 No. of atomic counters
 accessed by a CS 11.1.3.6
 MAX COMPUTE SHARED MEMORY SIZE Z+ GetIntegerv 32768
-Max total storage size of
+Max. total storage size of
 all variables declared as
 shared in all CSs linked
 into a single program object
 19.1
-MAX COMPUTE UNIFORM COMPONENTS Z+ GetIntegerv 512
+MAX COMPUTE UNIFORM COMPONENTS Z+ GetIntegerv 1024
 No. of components for
 CS uniform variables 19.1
 MAX COMPUTE IMAGE UNIFORMS Z+ GetIntegerv 8
@@ -445,19 +394,19 @@ blocks accessed by a
 compute shader
 7.8
 MIN PROGRAM TEXEL OFFSET Z GetIntegerv -8 Min texel offset allowed in lookup 11.1.3.5
-MAX PROGRAM TEXEL OFFSET Z GetIntegerv 7 Max texel offset allowed in lookup 11.1.3.5
+MAX PROGRAM TEXEL OFFSET Z GetIntegerv 7 Max. texel offset allowed in lookup 11.1.3.5
 MAX UNIFORM BUFFER BINDINGS Z+ GetIntegerv 84
-Max no. of uniform buffer binding
+Max. no. of uniform buffer binding
 points on the context 7.6.2
 MAX UNIFORM BLOCK SIZE Z+ GetIntegerv 16384
-Max size in basic machine units of a
-uniform block 7.6.2
-UNIFORM BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 1
-Min required alignment for uniform
+Max. size in basic machine units of
+a uniform block 7.6.2
+UNIFORM BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 256y
+Min. required alignment for uniform
 buffer sizes and offsets 7.6.2
 MAX COMBINED UNIFORM BLOCKS Z+ GetIntegerv 70
-Max no. of uniform buffers per program
-7.6.2
+Max. no. of uniform buffers per
+program 7.6.2
 MAX VARYING COMPONENTS Z+ GetIntegerv 60
 No. of components for output variables
 11.1.2.1
@@ -466,47 +415,49 @@ MAX COMBINED TEXTURE IMAGE UNITS Z+ GetIntegerv 80
 Total no. of texture units accessible
 by the GL 11.1.3.5
 MAX SUBROUTINES Z+ GetIntegerv 256
-Max no. of subroutines per shader
+Max. no. of subroutines per shader
 stage 7.9
 MAX SUBROUTINE UNIFORM LOCATIONS Z+ GetIntegerv 1024
-Max no. of subroutine uniform locations
+Max. no. of subroutine uniform locations
 per stage 7.9
 MAX UNIFORM LOCATIONS Z+ GetIntegerv 1024
-Max no. of user-assignable uniform
+Max. no. of user-assignable uniform
 locations 7.6
 MAX ATOMIC COUNTER BUFFER BINDINGS Z+ GetIntegerv 1
-Max no. of atomic counter buffer
+Max. no. of atomic counter buffer
 bindings 6.8
 MAX ATOMIC COUNTER BUFFER SIZE Z+ GetIntegerv 32
-Max size in basic machine units of
+Max. size in basic machine units of
 an atomic counter buffer 7.7
 MAX COMBINED ATOMIC COUNTER BUFFERS Z+ GetIntegerv 1
-Max no. of atomic counter buffers
+Max. no. of atomic counter buffers
 per program 7.7
 MAX COMBINED ATOMIC COUNTERS Z+ GetIntegerv 8
-Max no. of atomic counter uniforms
+Max. no. of atomic counter uniforms
 per program 11.1.3.6
 MAX SHADER STORAGE BUFFER BINDINGS Z+ GetIntegerv 8
-Max no. of shader storage buffer
+Max. no. of shader storage buffer
 bindings in the context 7.8
-MAX SHADER STORAGE BLOCK SIZE Z+ GetInteger64v 224 Max size in basic machine units of a
-shader storage block 7.8
+MAX SHADER STORAGE BLOCK SIZE Z+ GetInteger64v 227 Max. size in basic machine units of
+a shader storage block 7.8
 MAX COMBINED SHADER STORAGE BLOCKS Z+ GetIntegerv 8
 No. of shader storage blocks accessed
 by a program 7.8
-SHADER STORAGE BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 256
-Min required alignment for shader
+SHADER STORAGE BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 256y
+Min. required alignment for shader
 storage buffer binding offsets 7.8
 MAX IMAGE UNITS Z+ GetIntegerv 8
 No. of units for image
 load/store/atom 8.26
 MAX COMBINED SHADER OUTPUT RESOURCES Z+ GetIntegerv 8
 Limit on active image
-units + fragment outputs 8.26
+units + shader storage
+blocks + fragment outputs
+8.26
 MAX IMAGE SAMPLES Z+ GetIntegerv 0
-Max allowed samples for
-a texture level bound to
-an image unit
+Max. allowed samples
+for a texture level bound
+to an image unit
 8.26
 MAX VERTEX IMAGE UNIFORMS Z+ GetIntegerv 0
 No. of image variables in
@@ -568,53 +519,52 @@ The max no. of messages
 stored in the debug message
 log
 20.3
-MAX DEBUG GROUP STACK DEPTH Z+ GetIntegerv 64 Max group stack depth 20.6
+MAX DEBUG GROUP STACK DEPTH Z+ GetIntegerv 64 Max. group stack depth 20.6
 MAX LABEL LENGTH Z+ GetIntegerv 256
-Max length of a label
+Max. length of a label
 string 20.7
 MAX FRAMEBUFFER WIDTH Z+ GetIntegerv 16384
-maximum width for
-framebuffer object 9.2.1
+Max. width for framebuffer
+object 9.2.1
 MAX FRAMEBUFFER HEIGHT Z+ GetIntegerv 16384
-maximum height for
-framebuffer object 9.2.1
+Max. height for framebuffer
+object 9.2.1
 MAX FRAMEBUFFER LAYERS Z+ GetIntegerv 2048
-maximum layer count for
-layered framebuffer object
-9.2.1
+Max. layer count for layered
+framebuffer object 9.2.1
 MAX FRAMEBUFFER SAMPLES Z+ GetIntegerv 4
-maximum sample count
-for framebuffer object 9.2.1
+Max. sample count for
+framebuffer object 9.2.1
 MAX SAMPLE MASK WORDS Z+ GetIntegerv 1
-Max no. of sample mask
-words 17.3.3
+Max. no. of sample mask
+words 14.9.3
 MAX SAMPLES Z+ GetIntegerv 4
-Max no. of samples supported
-for all non-integer
-formats
-22.3
+Max. no. of samples
+supported for
+multisamplingy
+9.2.4
 MAX COLOR TEXTURE SAMPLES Z+ GetIntegerv 1
-Max no. of samples supported
-for all color formats
-in a multisample
-texture
+Max. no. of samples
+supported for all color
+formats in a multisample
+texturey
 22.3
 MAX DEPTH TEXTURE SAMPLES Z+ GetIntegerv 1
-Max no. of samples
+Max. no. of samples
 supported for all
 depth/stencil formats in a
-multisample texture
+multisample texturey
 22.3
 MAX INTEGER SAMPLES Z+ GetIntegerv 1
-Max no. of samples supported
+Max. no. of samples supported
 for all integer format
-multisample buffers
+multisample buffersy
 22.3
-QUERY COUNTER BITS 5  Z+ GetQueryiv see sec. 4.2.1
+QUERY COUNTER BITS n  Z+ GetQueryiv See sec. 4.2.3
 Asynchronous query
-counter bits 4.2.1
+counter bits 4.2.3
 MAX SERVER WAIT TIMEOUT Z+ GetInteger64v 0
-Max WaitSync timeout
+Max. WaitSync timeout
 interval 4.1.1
 MIN FRAGMENT INTERPOLATION OFFSET R GetFloatv -0.5
 Furthest negative offset
@@ -632,15 +582,15 @@ interpolate-
 AtOffset
 15.1
 MAX DRAW BUFFERS Z+ GetIntegerv 8
-Max no. of active draw
+Max. no. of active draw
 buffers 17.4.1
 MAX DUAL SOURCE DRAW BUFFERS Z+ GetIntegerv 1
-Max no. of active draw
+Max. no. of active draw
 buffers when using dualsource
 blending
-17.3.8
+17.3.6
 MAX COLOR ATTACHMENTS Z+ GetIntegerv 8
-Max no. of FBO attachment
+Max. no. of FBO attachment
 points for color
 buffers
 9.2.7
@@ -651,23 +601,23 @@ NUM SAMPLE COUNTS Z+ GetInternalformativ 1
 No. of supported sample
 counts 22.3
 MAX TRANSFORM FEEDBACK INTERLEAVED COMPONENTS Z+ GetIntegerv 64
-Max no. of components
+Max. no. of components
 to write to a single buffer
 in interleaved mode
 13.2
 MAX TRANSFORM FEEDBACK SEPARATE ATTRIBS Z+ GetIntegerv 4
-Max no. of separate attributes
-or outputs that
+Max. no. of separate
+attributes or outputs that
 can be captured in transform
 feedback
 13.2
 MAX TRANSFORM FEEDBACK SEPARATE COMPONENTS Z+ GetIntegerv 4
-Max no. of components
+Max. no. of components
 per attribute or output in
 separate mode
 13.2
 MAX TRANSFORM FEEDBACK BUFFERS Z+ GetIntegerv 4
-Max no. of buffer objs
+Max. no. of buffer objs
 to write with transform
 feedback
 13.2
@@ -682,3 +632,9 @@ No. of multisample
 buffers 14.3.1
 SAMPLES Z+ GetIntegerv 0 Coverage mask size 14.3.1
 SAMPLE POSITION n  2  R[0;1] GetMultisamplefv – Explicit sample positions 14.3.1
+IMPLEMENTATION COLOR READ FORMAT E GetIntegerv y
+Implementation preferred
+pixel format 18.2.2
+IMPLEMENTATION COLOR READ TYPE E GetIntegerv y
+Implementation preferred
+pixel type 18.2.2

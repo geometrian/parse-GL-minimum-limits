@@ -48,7 +48,7 @@ ViewportIndex
 POINT SIZE RANGE 2  R+ GetFloatv 1,1
 Range (lo to hi) of point
 sprite sizes 3.4
-POINT SIZE GRANULARITY R+ GetFloatv –
+POINT SIZE GRANULARITY R+ GetFloatv â€“
 Point sprite size granularity
 3.4
 ALIASED LINE WIDTH RANGE 2  R+ GetFloatv 1,1
@@ -57,16 +57,16 @@ line widths 3.5
 SMOOTH LINE WIDTH RANGE 2  R+ GetFloatv 1,1
 Range (lo to hi) of antialiased
 line widths 3.5
-SMOOTH LINE WIDTH GRANULARITY R+ GetFloatv –
+SMOOTH LINE WIDTH GRANULARITY R+ GetFloatv â€“
 Antialiased line width
 granularity 3.5
-MAX ELEMENTS INDICES Z+ GetIntegerv –
+MAX ELEMENTS INDICES Z+ GetIntegerv â€“
 Recommended
 max. number of
 DrawRangeElements
 indices
 2.8
-MAX ELEMENTS VERTICES Z+ GetIntegerv –
+MAX ELEMENTS VERTICES Z+ GetIntegerv â€“
 Recommended
 max. number of
 DrawRangeElements
@@ -99,27 +99,27 @@ formats 2.11.2
 SHADER COMPILER B GetBooleanv -
 Shader compiler supported
 2.11
-EXTENSIONS 0  S GetStringi –
+EXTENSIONS 0  S GetStringi â€“
 Supported individual extension
 names 6.1.5
-NUM EXTENSIONS Z+ GetIntegerv –
+NUM EXTENSIONS Z+ GetIntegerv â€“
 Number of individual extension
 names 6.1.5
 MAJOR VERSION Z+ GetIntegerv 3
 Major version number
 supported 6.1.5
-MINOR VERSION Z+ GetIntegerv –
+MINOR VERSION Z+ GetIntegerv â€“
 Minor version number
 supported 6.1.5
-CONTEXT FLAGS Z+ GetIntegerv –
+CONTEXT FLAGS Z+ GetIntegerv â€“
 Context full/forwardcompatible
 flag 6.1.5
-RENDERER S GetString – Renderer string 6.1.5
-SHADING LANGUAGE VERSION S GetString –
+RENDERER S GetString â€“ Renderer string 6.1.5
+SHADING LANGUAGE VERSION S GetString â€“
 Shading Language version
 supported 6.1.5
-VENDOR S GetString – Vendor string 6.1.5
-VERSION S GetString –
+VENDOR S GetString â€“ Vendor string 6.1.5
+VERSION S GetString â€“
 OpenGL version supported
 6.1.5
 MAX VERTEX ATTRIBS Z+ GetIntegerv 16
@@ -409,11 +409,11 @@ Maximum number of active draw
 buffers when using dual-source
 blending
 4.1.7
-DOUBLEBUFFER B GetBooleanv – True if front & back buffers exist 4.2.1
-STEREO B GetBooleanv – True if left & right buffers exist 6
+DOUBLEBUFFER B GetBooleanv â€“ True if front & back buffers exist 4.2.1
+STEREO B GetBooleanv â€“ True if left & right buffers exist 6
 SAMPLE BUFFERS Z+ GetIntegerv 0 Number of multisample buffers 3.3.1
 SAMPLES Z+ GetIntegerv 0 Coverage mask size 3.3.1
-SAMPLE POSITION n  2  R[0;1] GetMultisamplefv – Explicit sample positions 3.3.1
+SAMPLE POSITION n  2  R[0;1] GetMultisamplefv â€“ Explicit sample positions 3.3.1
 MAX COLOR ATTACHMENTS Z+ GetIntegerv 8
 Maximum number of FBO attachment
 points for color buffers 4.4.2

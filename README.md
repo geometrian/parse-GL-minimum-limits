@@ -4,7 +4,7 @@ _Hacky parser and exporter for minimum values of implementation-defined constant
 
 ## Summary
 
-I parsed the OpenGL specifications to generate [a cpp file](out-cpp.cpp) containing implementation-defined minimum values for various constants.  If you want to tweak it (good luck), the [parser is here](parse.py).
+I parsed the OpenGL specifications to generate [a cpp file](out-cpp.cpp) containing implementation-defined minimum values for various constants.  If you want to tweak it (good luck), the parser that generates it is [here](parse.py).
 
 ## Description
 
@@ -24,6 +24,7 @@ This project does all the hard work for you.  By hand, I painstakingly copied th
 - [OpenGL 4.3](https://www.opengl.org/registry/doc/glspec43.core.20120806.pdf) -> [gl4.3.txt](gl4.3.txt)
 - [OpenGL 4.4](https://www.opengl.org/registry/doc/glspec44.core.pdf) -> [gl4.4.txt](gl4.4.txt)
 - [OpenGL 4.5](https://www.opengl.org/registry/doc/glspec45.core.pdf) -> [gl4.5.txt](gl4.5.txt)
+- [OpenGL 4.6](https://www.opengl.org/registry/doc/glspec46.core.pdf) -> [gl4.6.txt](gl4.6.txt)
 
 Many tables didn't copy over well from the PDFs, so I had to manually adjust/fix them.
 
@@ -41,7 +42,7 @@ Contributions are welcome!  The parser _mostly_ works and _mostly_ outputs sane 
 - One might like to expand this project to handle initial values too, or perhaps other interesting information, like maximum value or notes given in the specifications.
 - Code cleanup.  Boy does it need it.
 
-If you'd rather help support development of similar projects, you can [donate](http://geometrian.com/).
+If you'd rather help support development of similar projects, you can [donate](https://geometrian.com/).
 
 ## License
 

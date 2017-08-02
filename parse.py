@@ -1,38 +1,39 @@
 import sys
 
 
+versions = [
+    (2,0), (2,1),
+    (3,0), (3,1), (3,2), (3,3),
+    (4,0), (4,1), (4,2), (4,3), (4,4), (4,5), (4,6)
+]
+versions_str = "2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6"
+versions_count = "2+4+7"
+
+
 constants = {}
 
 class Constant(object):
     def __init__(self, param, T,get):
+        assert len(param) > 2
         self.param = param
         self.T = T
         self.get = get
-        self.minvals = [   None,None,   None,None,None,None,   None,None,None,None,None,None   ]
+        self.minvals = [None]*len(versions)
     def _get_index(self, major,minor):
-        if   major == 2:
-            if   minor == 0: index=0
-            elif minor == 1: index=1
-            else: assert False
-        elif major == 3:
-            if   minor == 0: index=2
-            elif minor == 1: index=3
-            elif minor == 2: index=4
-            elif minor == 3: index=5
-            else: assert False
-        elif major == 4:
-            if   minor == 0: index= 6
-            elif minor == 1: index= 7
-            elif minor == 2: index= 8
-            elif minor == 3: index= 9
-            elif minor == 4: index=10
-            elif minor == 5: index=11
-            else: assert False
-        return index
+        index = 0
+        for version in versions:
+            if version[0]==major and version[1]==minor:
+                return index
+            index += 1
+        assert False
     def get_value(self, major,minor):
         index = self._get_index(major,minor)
         return self.minvals[index]
     def update(self, major,minor, minval):
+        if type(minval)==type(""):
+            assert minval is not "–"
+            assert minval[-1] != "\n"
+
         index = self._get_index(major,minor)
         if self.minvals[index] == None:
             self.minvals[index] = minval
@@ -89,8 +90,9 @@ class Constant(object):
 
 def load(major,minor):
     #Load file
-    file = open("gl"+str(major)+"."+str(minor)+".txt")
+    file = open("gl"+str(major)+"."+str(minor)+".txt","rb")
     data = file.read()
+    data = data.decode("utf-8")
     file.close()
 
     #Get the relevant lines
@@ -98,16 +100,20 @@ def load(major,minor):
     for line in data.split("\n"):
         if "Get" in line:
             #   Replace awful characters with better ones along the way
+            line = line.strip() #in-particular, for "\r".
             line = line.replace("\x02","×")
             line = line.replace("\x03","*")
             line = line.replace("–","-")
             line = line.replace("GetIntegeri v","GetIntegeri_v")
             line = line.replace("GetFramebufferParameteri ","GetFramebufferParameteriv ") #This appears to be a typo; the function doesn't exist
             line = line.replace("GetInteger ","GetIntegerv ") #This appears to be a typo; the function doesn't exist
-            line = line.replace("232 ?? 1","0xFFFFFFFF")
+            line = line.replace("232","0xFFFFFFFF")#"232 \xF4\x80\x80\x80 1","0xFFFFFFFF")
             line = line.replace("1024 (x, y), 64 (z)","{1024,1024,64}")
             line = line.replace("Z16*","Z")
+            line = line.replace("18 * ×Z+","Z")
+            line = line.replace("0 * ×Z+","Z")
             line = line.replace("Z2","Z")
+            line = line.replace("256y","256")
             lines.append(line)
 
     #Get the constants
@@ -127,6 +133,11 @@ def load(major,minor):
                 if tokens[0] in ["B","E","R","R+","S","Z","Z4","Z16","Z+"]: break
                 param += "_" + tokens[0]
                 tokens = tokens[1:]
+            try:
+                assert len(param) > 2 #If fails, probably means copy+paste had a "Get Value" that spans more than one line.  See docs.
+            except:
+                print(temp)
+                raise
         #   Remove optional parenthetical string; some params seem to have one to indicate ancient versions of them.
         for i in range(0,len(tokens),1):
             if "(" in tokens[i]:
@@ -199,6 +210,12 @@ def load(major,minor):
             print(constants[key][param].get_value(major,minor))
             constants[key][param].output()
             raise
+        if key in [
+            "String S",
+            "Stringi n×S"
+        ]:
+            #Probably no "minimum" value will ever be provided, so assume it wasn't.
+            del constants[key]
 
 ##        def get_s(s,max_len):
 ##            return "\""+s+"\"," + " "*(1+max_len-len(s))
@@ -210,11 +227,7 @@ def load(major,minor):
 ##            s += "\""+token+"\","
 ##        s = s[:-1]+"]"
 ##        print(s)
-for major,minor in [
-    (2,0), (2,1),
-    (3,0), (3,1), (3,2), (3,3),
-    (4,0), (4,1), (4,2), (4,3), (4,4), (4,5)
-]:
+for major,minor in versions:
     print("Parsing %d.%d . . ."%(major,minor))
     load(major,minor)
 print()
@@ -227,12 +240,15 @@ def combine(keys_old, key_new):
     assert key_new not in constants
     constants[key_new] = {}
     for key_old in keys_old:
-        for const in constants[key_old].values():
-            if const.param in constants[key_new].keys():
-                constants[key_new][const.param].combine_with(const)
-            else:
-                constants[key_new][const.param] = const
-        del constants[key_old]
+        if key_old in constants.keys():
+            for const in constants[key_old].values():
+                if const.param in constants[key_new].keys():
+                    constants[key_new][const.param].combine_with(const)
+                else:
+                    constants[key_new][const.param] = const
+            del constants[key_old]
+    if len(constants[key_new]) == 0:
+        del constants[key_new]
 combine(["Floatv 2×R","Floatv 2×R+"], "Floatv 2r")
 combine(["Floatv R","Floatv R+"], "Floatv r")
 combine(
@@ -241,7 +257,7 @@ combine(
 )
 combine(["FramebufferParameteriv B","FramebufferParameteriv Z+"], "FramebufferParameteriv i")
 combine(["Integerv E","Integerv Z","Integerv Z+"], "Integerv i")
-combine(["Internalformativ 0*×Z+","Internalformativ Z+"], "Internalformativ i")
+combine(["Internalformativ 0*×Z+","Internalformativ Z","Internalformativ Z+"], "Internalformativ i")
 
 #Fill empty slots with default values (for echoing C later; so optional)
 for key in sorted(constants.keys()):
@@ -257,34 +273,34 @@ for key in sorted(constants.keys()):
 
 #Output C-style arrays
 info = {
-    "Booleanv B"                         : (         "boolean",       "Boolean","GLboolean vers[2+4+6]",   "B"),
+    "Booleanv B"                         : (         "boolean",       "Boolean","GLboolean vers["+versions_count+"]",   "B"),
 
-    "ConvolutionParameteriv 2×Z+"        : (      "convparam2",    "ConvParam2",    "GLint vers[2+4+6][2]","I"),
-    "ConvolutionParameteriv 3×Z+"        : (      "convparam3",    "ConvParam3",    "GLint vers[2+4+6][3]","I"),
+    "ConvolutionParameteriv 2×Z+"        : (      "convparam2",    "ConvParam2",    "GLint vers["+versions_count+"][2]","I"),
+    "ConvolutionParameteriv 3×Z+"        : (      "convparam3",    "ConvParam3",    "GLint vers["+versions_count+"][3]","I"),
 
-    "Floatv 2r"                          : (          "float2",        "Float2",  "GLfloat vers[2+4+6][2]","F"),
-    "Floatv r"                           : (           "float",         "Float",  "GLfloat vers[2+4+6]",   "F"),
+    "Floatv 2r"                          : (          "float2",        "Float2",  "GLfloat vers["+versions_count+"][2]","F"),
+    "Floatv r"                           : (           "float",         "Float",  "GLfloat vers["+versions_count+"]",   "F"),
 
-    "FramebufferAttachmentParameteriv i" : ("fbo_attach_param","FBOAttachParam",    "GLint vers[2+4+6]",   "I"),
+    "FramebufferAttachmentParameteriv i" : ("fbo_attach_param","FBOAttachParam",    "GLint vers["+versions_count+"]",   "I"),
 
-    "FramebufferParameteriv i"           : (       "fbo_param",      "FBOParam",    "GLint vers[2+4+6]",   "I"),
+    "FramebufferParameteriv i"           : (       "fbo_param",      "FBOParam",    "GLint vers["+versions_count+"]",   "I"),
 
-    "Integer64v Z+"                      : (           "int64",         "Int64",  "GLint64 vers[2+4+6]",   "L"),
+    "Integer64v Z+"                      : (           "int64",         "Int64",  "GLint64 vers["+versions_count+"]",   "L"),
 
-    "Integeri_v 3×Z+"                    : (            "intv",          "Intv",    "GLint vers[2+4+6][3]","I"),
+    "Integeri_v 3×Z+"                    : (            "intv",          "Intv",    "GLint vers["+versions_count+"][3]","I"),
 
-    "Integerv i"                         : (             "int",           "Int",    "GLint vers[2+4+6]",   "I"), #But you should cast to GLenum
+    "Integerv i"                         : (             "int",           "Int",    "GLint vers["+versions_count+"]",   "I"), #But you should cast to GLenum
 
-    "Internalformativ i"                 : (          "intfmt",   "InternalFmt",    "GLint vers[2+4+6]",   "I")
+    "Internalformativ i"                 : (          "intfmt",   "InternalFmt",    "GLint vers["+versions_count+"]",   "I")
 }
 print("""//Autogenerated file containing minimum values for certain OpenGL constants.  Values are given in arrays,
-//	corresponding to OpenGL { 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5 }.  See generator:
+//	corresponding to OpenGL { """+versions_str+""" }.  See generator:
 //	https://github.com/imallett/parse-GL-minimum-limits
 """,file=f)
 print("#define B false",file=f)
 print("#define E GL_INVALID_ENUM",file=f)
-print("#define I std::numeric_limits<GLint>::max()",file=f)
 print("#define F std::numeric_limits<GLfloat>::quiet_NaN()",file=f)
+print("#define I std::numeric_limits<GLint>::max()",file=f)
 print("#define L std::numeric_limits<GLint64>::max()\n",file=f)
 keys = sorted(constants.keys())
 for key in keys:
@@ -295,7 +311,7 @@ for key in keys:
     default   = info[key][3]
     print("""#if 1\nstruct Limits"""+uppername+""" final { //glGet"""+key.split(" ")[0]+"""(...)
 	GLenum param;
-	"""+data+"""; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5
+	"""+data+"; //GL "+versions_str+"""
 } limits_"""+lowername+"""[] = {""",file=f)
     s = constants[key].values()
     consts = sorted(s,key=lambda c:(c.T,c.param))

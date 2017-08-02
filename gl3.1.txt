@@ -29,7 +29,7 @@ dimensions 2.12.1
 POINT SIZE RANGE 2  R+ GetFloatv 1,1
 Range (lo to hi) of point
 sprite sizes 3.4
-POINT SIZE GRANULARITY R+ GetFloatv –
+POINT SIZE GRANULARITY R+ GetFloatv â€“
 Point sprite size granularity
 3.4
 ALIASED LINE WIDTH RANGE 2  R+ GetFloatv 1,1
@@ -38,16 +38,16 @@ line widths 3.5
 SMOOTH LINE WIDTH RANGE (v1.1: LINE WIDTH RANGE) 2  R+ GetFloatv 1,1
 Range (lo to hi) of antialiased
 line widths 3.5
-SMOOTH LINE WIDTH GRANULARITY (v1.1: LINE WIDTH GRANULARITY) R+ GetFloatv –
+SMOOTH LINE WIDTH GRANULARITY (v1.1: LINE WIDTH GRANULARITY) R+ GetFloatv â€“
 Antialiased line width
 granularity 3.5
-MAX ELEMENTS INDICES Z+ GetIntegerv –
+MAX ELEMENTS INDICES Z+ GetIntegerv â€“
 Recommended
 max. number of
 DrawRangeElements
 indices
 2.8
-MAX ELEMENTS VERTICES Z+ GetIntegerv –
+MAX ELEMENTS VERTICES Z+ GetIntegerv â€“
 Recommended
 max. number of
 DrawRangeElements
@@ -68,27 +68,27 @@ rectangular textures 3.8.1
 QUERY COUNTER BITS 3  Z+ GetQueryiv see 6.1.6
 Asynchronous query
 counter bits 6.1.6
-EXTENSIONS 0  S GetStringi –
+EXTENSIONS 0  S GetStringi â€“
 Supported individual extension
 names 6.1.4
-NUM EXTENSIONS Z+ GetIntegerv –
+NUM EXTENSIONS Z+ GetIntegerv â€“
 Number of individual extension
 names 6.1.4
-MAJOR VERSION Z+ GetIntegerv –
+MAJOR VERSION Z+ GetIntegerv â€“
 Major version number
 supported 6.1.4
-MINOR VERSION Z+ GetIntegerv –
+MINOR VERSION Z+ GetIntegerv â€“
 Minor version number
 supported 6.1.4
-CONTEXT FLAGS Z+ GetIntegerv –
+CONTEXT FLAGS Z+ GetIntegerv â€“
 Context full/forwardcompatible
 flag 6.1.4
-RENDERER S GetString – Renderer string 6.1.4
-SHADING LANGUAGE VERSION S GetString –
+RENDERER S GetString â€“ Renderer string 6.1.4
+SHADING LANGUAGE VERSION S GetString â€“
 Shading Language version
 supported 6.1.4
-VENDOR S GetString – Vendor string 6.1.4
-VERSION S GetString –
+VENDOR S GetString â€“ Vendor string 6.1.4
+VERSION S GetString â€“
 OpenGL version supported
 6.1.4
 MAX VERTEX ATTRIBS Z+ GetIntegerv 16
@@ -183,8 +183,8 @@ default)
 MAX DRAW BUFFERS Z+ GetIntegerv 8
 Maximum number of active draw
 buffers 4.2.1
-DOUBLEBUFFER B GetBooleanv – True if front & back buffers exist 4.2.1
-STEREO B GetBooleanv – True if left & right buffers exist 6
+DOUBLEBUFFER B GetBooleanv â€“ True if front & back buffers exist 4.2.1
+STEREO B GetBooleanv â€“ True if left & right buffers exist 6
 SAMPLE BUFFERS Z+ GetIntegerv 0 Number of multisample buffers 3.3.1
 SAMPLES Z+ GetIntegerv 0 Coverage mask size 3.3.1
 MAX COLOR ATTACHMENTS Z+ GetIntegerv 8

@@ -48,7 +48,7 @@ ViewportIndex
 POINT SIZE RANGE 2  R+ GetFloatv 1,1
 Range (lo to hi) of point
 sprite sizes 14.4
-POINT SIZE GRANULARITY R+ GetFloatv –
+POINT SIZE GRANULARITY R+ GetFloatv â€“
 Point sprite size granularity
 14.4
 ALIASED LINE WIDTH RANGE 2  R+ GetFloatv 1,1
@@ -57,14 +57,14 @@ line widths 14.5
 SMOOTH LINE WIDTH RANGE 2  R+ GetFloatv 1,1
 Range (lo to hi) of antialiased
 line widths 14.5
-SMOOTH LINE WIDTH GRANULARITY R+ GetFloatv –
+SMOOTH LINE WIDTH GRANULARITY R+ GetFloatv â€“
 Antialiased line width
 granularity 14.5
-MAX ELEMENTS INDICES Z+ GetIntegerv –
+MAX ELEMENTS INDICES Z+ GetIntegerv â€“
 Recommended max no. of
 DrawRangeElements indices
 10.3
-MAX ELEMENTS VERTICES Z+ GetIntegerv –
+MAX ELEMENTS VERTICES Z+ GetIntegerv â€“
 Recommended max no. of
 DrawRangeElements vertices
 10.3
@@ -107,33 +107,33 @@ Map*Buffer
 TEXTURE BUFFER OFFSET ALIGNMENT Z+ GetIntegerv 1
 Min required alignment
 for texture buffer offsets 8.9
-MAJOR VERSION Z+ GetIntegerv –
+MAJOR VERSION Z+ GetIntegerv â€“
 Major version no. supported
 22.2
-MINOR VERSION Z+ GetIntegerv –
+MINOR VERSION Z+ GetIntegerv â€“
 Minor version no. supported
 22.2
-CONTEXT FLAGS Z+ GetIntegerv –
+CONTEXT FLAGS Z+ GetIntegerv â€“
 Context full/forwardcompatible
 flag 22.2
-EXTENSIONS n  S GetStringi –
+EXTENSIONS n  S GetStringi â€“
 Supported individual extension
 names 22.2
 NUM EXTENSIONS Z+ GetIntegerv 0
 No. of individual extension
 names 22.2
-RENDERER S GetString – Renderer string 22.2
-SHADING LANGUAGE VERSION S GetString –
+RENDERER S GetString â€“ Renderer string 22.2
+SHADING LANGUAGE VERSION S GetString â€“
 Latest Shading Language
 version supported 22.2
-SHADING LANGUAGE VERSION n  S GetStringi –
+SHADING LANGUAGE VERSION n  S GetStringi â€“
 Supported Shading Language
 versions 22.2
 NUM SHADING LANGUAGE VERSIONS Z+ GetIntegerv 3
 No. of supported Shading
 Language versions 22.2
-VENDOR S GetString – Vendor string 22.2
-VERSION S GetString –
+VENDOR S GetString â€“ Vendor string 22.2
+VERSION S GetString â€“
 OpenGL version supported
 22.2
 MAX VERTEX ATTRIBS Z+ GetIntegerv 16
@@ -585,14 +585,14 @@ Max no. of buffer objs
 to write with transform
 feedback
 13.2
-DOUBLEBUFFER B GetBooleanv –
+DOUBLEBUFFER B GetBooleanv â€“
 True if front & back
 buffers exist 17.4.1
-STEREO B GetBooleanv –
+STEREO B GetBooleanv â€“
 True if left & right
 buffers exist 22
 SAMPLE BUFFERS Z+ GetIntegerv 0
 No. of multisample
 buffers 14.3.1
 SAMPLES Z+ GetIntegerv 0 Coverage mask size 14.3.1
-SAMPLE POSITION n  2  R[0;1] GetMultisamplefv – Explicit sample positions 14.3.1
+SAMPLE POSITION n  2  R[0;1] GetMultisamplefv â€“ Explicit sample positions 14.3.1
