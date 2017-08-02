@@ -7,9 +7,7 @@
 3. Copy into a new file of the form "gl&lt;major&gt;.&lt;minor&gt;.txt":
     - Copy *only* the tables' interiors.
     - Copy only tables with a "Minimum Value" column.
-    - If the "Get value" token is long (and in-particular if it is split onto two lines), the copy+paste will put the type on the next line.  Something like:<br/>
-    ```MAX TESS CONTROL TOTAL OUTPUT COMPONENTS
-Z+ GetIntegerv 4096```<br/>
-Simply put these on the same line (with a space between) to fix.
+    - If the "Get value" token is long (and in-particular if it is split onto two lines), the copy+paste will put the type on the next line.  Something like:<blockquote>MAX TESS CONTROL TOTAL OUTPUT COMPONENTS<br/>
+Z+ GetIntegerv 4096</blockquote>Simply put these on the same line (with a space between) to fix:<blockquote>MAX TESS CONTROL TOTAL OUTPUT COMPONENTS Z+ GetIntegerv 4096</blockquote>
 
 4. Open [parse.py](parse.py), edit the lines on the top, and re-run.  This should produce an updated file "[out-cpp.cpp](out-cpp.cpp)", however chances are some (hopefully minor) tweaking of the parser will be required first (I aim to do this for you, for each GL version, first, though).
