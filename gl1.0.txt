@@ -1,0 +1,70 @@
+MAX LIGHTS Z+ GetIntegerv 8 Maximum number of
+lights
+2.12.1 {
+MAX CLIP PLANES Z+ GetIntegerv 6 Maximum number of
+user clipping planes
+2.10 {
+MAX MODELVIEW STACK DEPTH Z+ GetIntegerv 32 Maximum model-view
+stack depth
+2.9.2 {
+MAX PROJECTION STACK DEPTH Z+ GetIntegerv 2 Maximum projection
+matrix stack depth
+2.9.2 {
+MAX TEXTURE STACK DEPTH Z+ GetIntegerv 2 Maximum number
+depth of texture
+matrix stack
+2.9.2 {
+SUBPIXEL BITS Z+ GetIntegerv 4 Number of bits of
+subpixel precision in x
+& y
+3 {
+MAX TEXTURE SIZE Z+ GetIntegerv 64 Maximum height or
+width of a texture
+image wo borders
+3.8 {
+MAX PIXEL MAP TABLE Z+ GetIntegerv 32 Maximum size of a
+PixelMap translation
+table
+3.6.2 {
+MAX NAME STACK DEPTH Z+ GetIntegerv 64 Maximum selection
+name stack depth
+5.2 {
+MAX LIST NESTING Z+ GetIntegerv 64 Maximum display list
+call nesting
+5.4 {
+MAX EVAL ORDER Z+ GetIntegerv 8 Maximum evaluator
+polynomial order
+5.1 {
+MAX VIEWPORT DIMS 2  Z+ GetIntegerv see 2.9.1 Maximum viewport
+dimensions
+2.9.1 {
+MAX ATTRIB STACK DEPTH Z+ GetIntegerv 16 Maximum depth of the
+attribute stack
+6 {
+AUX BUFFERS Z+ GetIntegerv 0 Number of auxiliary
+buers
+4.2.1 {
+RGBA MODE B GetBooleanv { True if color buers
+store rgba
+2.7 {
+INDEX MODE B GetBooleanv { True if color buers
+store indexes
+2.7 {
+DOUBLEBUFFER B GetBooleanv { True if front & back
+buers exist
+4.2.1 {
+STEREO B GetBooleanv { True if left & right
+buers exist
+6 {
+POINT SIZE RANGE 2  R+ GetFloatv 1,1 Range (lo to hi) of
+antialiased point sizes
+3.3 {
+POINT SIZE GRANULARITY R+ GetFloatv { Antialiased point size
+granularity
+3.3 {
+LINE WIDTH RANGE 2  R+ GetFloatv 1,1 Range (lo to hi) of
+antialiased line widths
+3.4 {
+LINE WIDTH GRANULARITY R+ GetFloatv { Antialiased line width
+granularity
+3.4 {

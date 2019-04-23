@@ -2,12 +2,14 @@ import sys
 
 
 versions = [
+    (1,0), (1,1), (1,2), (1,3), (1,4), (1,5),
     (2,0), (2,1),
     (3,0), (3,1), (3,2), (3,3),
     (4,0), (4,1), (4,2), (4,3), (4,4), (4,5), (4,6)
 ]
-versions_str = "2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6"
-versions_count = "2+4+7"
+spaces_indices = (5,7,11)
+versions_str = "1.0,1.1,1.2.1,1.3,1.4,1.5, 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6"
+versions_count = "6+2+4+7"
 
 
 constants = {}
@@ -59,7 +61,7 @@ class Constant(object):
                 elif self.T=="2×Z+": s="{I,I}"
                 elif self.T=="3×Z+": s="{I,I,I}"
                 elif self.T in ["2×R","2×R+"]:
-                    if i<7: s="{F,   F   }"
+                    if i<13: s="{F,   F   }"
                     else:   s="{F,        F       }"
                 else:
                     print(self.T)
@@ -83,7 +85,7 @@ class Constant(object):
             s += self.minvals[i]
             s += ","
             s += " "*(ls[1+i]-len(self.minvals[i]))
-            if i in [1,5]: s+="   "
+            if i in spaces_indices: s+="   "
         s = s[:-1] + "   } }"
         if with_comma: s+=","
         print(s,file=file)
@@ -103,6 +105,7 @@ def load(major,minor):
             line = line.strip() #in-particular, for "\r".
             line = line.replace("\x02","×")
             line = line.replace("\x03","*")
+            line = line.replace("{","–")
             line = line.replace("–","-")
             line = line.replace("GetIntegeri v","GetIntegeri_v")
             line = line.replace("GetFramebufferParameteri ","GetFramebufferParameteriv ") #This appears to be a typo; the function doesn't exist
@@ -150,6 +153,11 @@ def load(major,minor):
         while len(tokens) >= 3 and tokens[1] in ["×","*"]:
             tokens = [tokens[0]+tokens[1]+tokens[2]] + tokens[3:]
         #   Constant information
+        try:
+            assert len(tokens) > 2 #If fails, probably means copy+paste had a "Get Value" that spans more than one line.  See docs.
+        except:
+            print(tokens)
+            raise
         T = tokens[0]
         get = tokens[1][3:]
         minval = tokens[2]

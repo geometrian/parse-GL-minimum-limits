@@ -12,6 +12,12 @@ OpenGL has various implementation-defined constants that have minimum values.  U
 
 This project does all the hard work for you.  By hand, I painstakingly copied the tables that contain minimum values, from the following OpenGL specifications into the following raw files:
 
+- [OpenGL 1.0](https://www.khronos.org/registry/OpenGL/specs/gl/glspec10.pdf) -> [gl1.0.txt](gl1.0.txt)
+- [OpenGL 1.1](https://www.khronos.org/registry/OpenGL/specs/gl/glspec11.ps) -> [gl1.1.txt](gl1.1.txt)
+- [OpenGL 1.2](https://www.khronos.org/registry/OpenGL/specs/gl/glspec121.pdf) -> [gl1.2.txt](gl1.2.txt)
+- [OpenGL 1.3](https://www.khronos.org/registry/OpenGL/specs/gl/glspec13.pdf) -> [gl1.3.txt](gl1.3.txt)
+- [OpenGL 1.4](https://www.khronos.org/registry/OpenGL/specs/gl/glspec14.pdf) -> [gl1.4.txt](gl1.4.txt)
+- [OpenGL 1.5](https://www.khronos.org/registry/OpenGL/specs/gl/glspec15.pdf) -> [gl1.5.txt](gl1.5.txt)
 - [OpenGL 2.0](https://www.khronos.org/registry/OpenGL/specs/gl/glspec20.pdf) -> [gl2.0.txt](gl2.0.txt)
 - [OpenGL 2.1](https://www.khronos.org/registry/OpenGL/specs/gl/glspec21.pdf) -> [gl2.1.txt](gl2.1.txt)
 - [OpenGL 3.0](https://www.khronos.org/registry/OpenGL/specs/gl/glspec30.pdf) -> [gl3.0.txt](gl3.0.txt)
@@ -36,7 +42,6 @@ From here, the result can be copied into, say, [a cpp file](out-cpp.cpp) for eas
 
 Contributions are welcome!  The parser _mostly_ works and _mostly_ outputs sane data, yet there are still major areas where help is needed:
 
-- More GL versions (in particular, add raw files for GLs 1.0, 1.1, 1.2, 1.2.1, 1.3, 1.4, and 1.5).  I didn't bother adding these, since they're probably irrelevant today--but doing so should be relatively easy for a newcomer if my experience with the other specifications is representative.
 - A few constants are incorrectly parsed.  This happens when the "value" was actually a footnote.  The result is typically a small number, and later occurrences of the constant tend to give it a real, larger value.  So the results (probably?) aren't _very_ wrong.  But this still shouldn't happen.
 - Support for more constants.  If the value is not easy to find, then the entire constant is ignored.  This is sortof bad.  For example, if the type is listed as "Z+", then we ought to be able to assume the value is at least 1, even if there's no other information in the specification at all.  As another example, some constants are defined in terms of other constants.  Figuring out the values for these would (only) require finding the minimum values of those dependencies and then doing the calculation.
 - One might like to expand this project to handle initial values too, or perhaps other interesting information, like maximum value or notes given in the specifications.
