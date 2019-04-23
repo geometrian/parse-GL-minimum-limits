@@ -38,7 +38,7 @@ class Constant(object):
         if self.minvals[index] == None:
             self.minvals[index] = minval
         else:
-            #This can happen; e.g. "GL_MAX_VERTEX_UNIFORM_COMPONENTS" is specified twice in GL 3.1; once as a footnote that gets misparsed as "1".
+            #This can happen; e.g. `GL_MAX_VERTEX_UNIFORM_COMPONENTS` is specified twice in GL 3.1; once as a footnote that gets misparsed as `1`.
             self.minvals[index] = max([minval,self.minvals[index]])
     def combine_with(self, other):
         for i in range(len(self.minvals)):
@@ -59,8 +59,8 @@ class Constant(object):
                 elif self.T=="2×Z+": s="{I,I}"
                 elif self.T=="3×Z+": s="{I,I,I}"
                 elif self.T in ["2×R","2×R+"]:
-                    if i<7: s="{   F,   F}"
-                    else:   s="{        F,       F}"
+                    if i<7: s="{F,   F   }"
+                    else:   s="{F,        F       }"
                 else:
                     print(self.T)
                     assert False
@@ -80,9 +80,9 @@ class Constant(object):
     def output_c(self, file, ls, with_comma):
         s = "\t{ "+self.param+","+" "*(ls[0]-len(self.param))+" {   "
         for i in range(len(self.minvals)):
-            s += " "*(ls[1+i]-len(self.minvals[i]))
             s += self.minvals[i]
             s += ","
+            s += " "*(ls[1+i]-len(self.minvals[i]))
             if i in [1,5]: s+="   "
         s = s[:-1] + "   } }"
         if with_comma: s+=","
@@ -184,7 +184,7 @@ def load(major,minor):
         elif param=="GL_MAX_COMPUTE_WORK_GROUP_COUNT": minval="{"+minval+","+minval+","+minval+"}"
         elif minval=="1,1":
             if major<4 or minor<1: minval="{1.0f,1.0f}"
-            else:                  minval="{     1.0f,    1.0f}"
+            else:                  minval="{1.0f,     1.0f    }"
         elif minval=="{1024,1024,64}": minval="{ 1024, 1024,   64}"
         elif "." in minval: minval+="f"
         elif minval in ["8*","14*","70*","1+"]: minval=minval[:-1]
@@ -273,25 +273,17 @@ for key in sorted(constants.keys()):
 
 #Output C-style arrays
 info = {
-    "Booleanv B"                         : (         "boolean",       "Boolean","GLboolean vers["+versions_count+"]",   "B"),
-
-    "ConvolutionParameteriv 2×Z+"        : (      "convparam2",    "ConvParam2",    "GLint vers["+versions_count+"][2]","I"),
-    "ConvolutionParameteriv 3×Z+"        : (      "convparam3",    "ConvParam3",    "GLint vers["+versions_count+"][3]","I"),
-
-    "Floatv 2r"                          : (          "float2",        "Float2",  "GLfloat vers["+versions_count+"][2]","F"),
-    "Floatv r"                           : (           "float",         "Float",  "GLfloat vers["+versions_count+"]",   "F"),
-
-    "FramebufferAttachmentParameteriv i" : ("fbo_attach_param","FBOAttachParam",    "GLint vers["+versions_count+"]",   "I"),
-
-    "FramebufferParameteriv i"           : (       "fbo_param",      "FBOParam",    "GLint vers["+versions_count+"]",   "I"),
-
-    "Integer64v Z+"                      : (           "int64",         "Int64",  "GLint64 vers["+versions_count+"]",   "L"),
-
-    "Integeri_v 3×Z+"                    : (            "intv",          "Intv",    "GLint vers["+versions_count+"][3]","I"),
-
-    "Integerv i"                         : (             "int",           "Int",    "GLint vers["+versions_count+"]",   "I"), #But you should cast to GLenum
-
-    "Internalformativ i"                 : (          "intfmt",   "InternalFmt",    "GLint vers["+versions_count+"]",   "I")
+    "Booleanv B"                         : ("boolean",         "Boolean",       "GLboolean vers["+versions_count+"]", "B"),
+    "ConvolutionParameteriv 2×Z+"        : ("convparam2",      "ConvParam2",    "GLint vers["+versions_count+"][2]",  "I"),
+    "ConvolutionParameteriv 3×Z+"        : ("convparam3",      "ConvParam3",    "GLint vers["+versions_count+"][3]",  "I"),
+    "Floatv 2r"                          : ("float2",          "Float2",        "GLfloat vers["+versions_count+"][2]","F"),
+    "Floatv r"                           : ("float",           "Float",         "GLfloat vers["+versions_count+"]",   "F"),
+    "FramebufferAttachmentParameteriv i" : ("fbo_attach_param","FBOAttachParam","GLint vers["+versions_count+"]",     "I"),
+    "FramebufferParameteriv i"           : ("fbo_param",       "FBOParam",      "GLint vers["+versions_count+"]",     "I"),
+    "Integer64v Z+"                      : ("int64",           "Int64",         "GLint64 vers["+versions_count+"]",   "L"),
+    "Integeri_v 3×Z+"                    : ("intv",            "Intv",          "GLint vers["+versions_count+"][3]",  "I"),
+    "Integerv i"                         : ("int",             "Int",           "GLint vers["+versions_count+"]",     "I"), #But you should cast to `GLenum`
+    "Internalformativ i"                 : ("intfmt",          "InternalFmt",   "GLint vers["+versions_count+"]",     "I")
 }
 print("""//Autogenerated file containing minimum values for certain OpenGL constants.  Values are given in arrays,
 //	corresponding to OpenGL { """+versions_str+""" }.  See generator:
@@ -300,8 +292,8 @@ print("""//Autogenerated file containing minimum values for certain OpenGL const
 print("#define B false",file=f)
 print("#define E GL_INVALID_ENUM",file=f)
 print("#define F std::numeric_limits<GLfloat>::quiet_NaN()",file=f)
-print("#define I std::numeric_limits<GLint>::max()",file=f)
-print("#define L std::numeric_limits<GLint64>::max()\n",file=f)
+print("#define I std::numeric_limits<GLint  >::max      ()",file=f)
+print("#define L std::numeric_limits<GLint64>::max      ()\n",file=f)
 keys = sorted(constants.keys())
 for key in keys:
     if key != keys[0]: print("};\n#endif\n",file=f)
