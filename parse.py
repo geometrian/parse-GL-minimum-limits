@@ -309,7 +309,7 @@ for key in keys:
     uppername = info[key][1]
     data      = info[key][2]
     default   = info[key][3]
-    print("""#if 1\nstruct Limits"""+uppername+""" final { //glGet"""+key.split(" ")[0]+"""(...)
+    print("""#if 1\nstruct Limits"""+uppername+""" final { //`glGet"""+key.split(" ")[0]+"""(...)`
 	GLenum param;
 	"""+data+"; //GL "+versions_str+"""
 } limits_"""+lowername+"""[] = {""",file=f)

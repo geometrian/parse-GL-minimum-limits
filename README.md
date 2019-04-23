@@ -12,19 +12,19 @@ OpenGL has various implementation-defined constants that have minimum values.  U
 
 This project does all the hard work for you.  By hand, I painstakingly copied the tables that contain minimum values, from the following OpenGL specifications into the following raw files:
 
-- [OpenGL 2.0](https://www.opengl.org/documentation/specs/version2.0/glspec20.pdf) -> [gl2.0.txt](gl2.0.txt)
-- [OpenGL 2.1](https://www.opengl.org/documentation/specs/version2.1/glspec21.pdf) -> [gl2.1.txt](gl2.1.txt)
-- [OpenGL 3.0](https://www.opengl.org/registry/doc/glspec30.20080811.pdf) -> [gl3.0.txt](gl3.0.txt)
-- [OpenGL 3.1](https://www.opengl.org/registry/doc/glspec31.20090324.pdf) -> [gl3.1.txt](gl3.1.txt)
-- [OpenGL 3.2](https://www.opengl.org/registry/doc/glspec32.core.20090803.pdf) -> [gl3.2.txt](gl3.2.txt)
-- [OpenGL 3.3](https://www.opengl.org/registry/doc/glspec33.core.20100311.withchanges.pdf) -> [gl3.3.txt](gl3.3.txt)
-- [OpenGL 4.0](https://www.opengl.org/registry/doc/glspec40.core.20100311.pdf) -> [gl4.0.txt](gl4.0.txt)
-- [OpenGL 4.1](https://www.opengl.org/registry/doc/glspec41.core.20100725.pdf) -> [gl4.1.txt](gl4.1.txt)
-- [OpenGL 4.2](https://www.opengl.org/registry/doc/glspec42.core.20110822.withchanges.pdf) -> [gl4.2.txt](gl4.2.txt)
-- [OpenGL 4.3](https://www.opengl.org/registry/doc/glspec43.core.20120806.pdf) -> [gl4.3.txt](gl4.3.txt)
-- [OpenGL 4.4](https://www.opengl.org/registry/doc/glspec44.core.pdf) -> [gl4.4.txt](gl4.4.txt)
-- [OpenGL 4.5](https://www.opengl.org/registry/doc/glspec45.core.pdf) -> [gl4.5.txt](gl4.5.txt)
-- [OpenGL 4.6](https://www.opengl.org/registry/doc/glspec46.core.pdf) -> [gl4.6.txt](gl4.6.txt)
+- [OpenGL 2.0](https://www.khronos.org/registry/OpenGL/specs/gl/glspec20.pdf) -> [gl2.0.txt](gl2.0.txt)
+- [OpenGL 2.1](https://www.khronos.org/registry/OpenGL/specs/gl/glspec21.pdf) -> [gl2.1.txt](gl2.1.txt)
+- [OpenGL 3.0](https://www.khronos.org/registry/OpenGL/specs/gl/glspec30.pdf) -> [gl3.0.txt](gl3.0.txt)
+- [OpenGL 3.1](https://www.khronos.org/registry/OpenGL/specs/gl/glspec31.pdf) -> [gl3.1.txt](gl3.1.txt)
+- [OpenGL 3.2](https://www.khronos.org/registry/OpenGL/specs/gl/glspec32.core.pdf) -> [gl3.2.txt](gl3.2.txt)
+- [OpenGL 3.3](https://www.khronos.org/registry/OpenGL/specs/gl/glspec33.core.pdf) -> [gl3.3.txt](gl3.3.txt)
+- [OpenGL 4.0](https://www.khronos.org/registry/OpenGL/specs/gl/glspec40.core.pdf) -> [gl4.0.txt](gl4.0.txt)
+- [OpenGL 4.1](https://www.khronos.org/registry/OpenGL/specs/gl/glspec41.core.pdf) -> [gl4.1.txt](gl4.1.txt)
+- [OpenGL 4.2](https://www.khronos.org/registry/OpenGL/specs/gl/glspec42.core.pdf) -> [gl4.2.txt](gl4.2.txt)
+- [OpenGL 4.3](https://www.khronos.org/registry/OpenGL/specs/gl/glspec43.core.pdf) -> [gl4.3.txt](gl4.3.txt)
+- [OpenGL 4.4](https://www.khronos.org/registry/OpenGL/specs/gl/glspec44.core.pdf) -> [gl4.4.txt](gl4.4.txt)
+- [OpenGL 4.5](https://www.khronos.org/registry/OpenGL/specs/gl/glspec45.core.pdf) -> [gl4.5.txt](gl4.5.txt)
+- [OpenGL 4.6](https://www.khronos.org/registry/OpenGL/specs/gl/glspec46.core.pdf) -> [gl4.6.txt](gl4.6.txt)
 
 Many tables didn't copy over well from the PDFs, so I had to manually adjust/fix them.
 

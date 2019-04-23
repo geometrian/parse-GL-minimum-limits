@@ -9,7 +9,7 @@
 #define L std::numeric_limits<GLint64>::max()
 
 #if 1
-struct LimitsBoolean final { //glGetBooleanv(...)
+struct LimitsBoolean final { //`glGetBooleanv(...)`
 	GLenum param;
 	GLboolean vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_boolean[] = {
@@ -18,7 +18,7 @@ struct LimitsBoolean final { //glGetBooleanv(...)
 #endif
 
 #if 1
-struct LimitsConvParam2 final { //glGetConvolutionParameteriv(...)
+struct LimitsConvParam2 final { //`glGetConvolutionParameteriv(...)`
 	GLenum param;
 	GLint vers[2+4+7][2]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_convparam2[] = {
@@ -27,7 +27,7 @@ struct LimitsConvParam2 final { //glGetConvolutionParameteriv(...)
 #endif
 
 #if 1
-struct LimitsConvParam3 final { //glGetConvolutionParameteriv(...)
+struct LimitsConvParam3 final { //`glGetConvolutionParameteriv(...)`
 	GLenum param;
 	GLint vers[2+4+7][3]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_convparam3[] = {
@@ -36,7 +36,7 @@ struct LimitsConvParam3 final { //glGetConvolutionParameteriv(...)
 #endif
 
 #if 1
-struct LimitsFloat2 final { //glGetFloatv(...)
+struct LimitsFloat2 final { //`glGetFloatv(...)`
 	GLenum param;
 	GLfloat vers[2+4+7][2]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_float2[] = {
@@ -50,7 +50,7 @@ struct LimitsFloat2 final { //glGetFloatv(...)
 #endif
 
 #if 1
-struct LimitsFloat final { //glGetFloatv(...)
+struct LimitsFloat final { //`glGetFloatv(...)`
 	GLenum param;
 	GLfloat vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_float[] = {
@@ -62,7 +62,7 @@ struct LimitsFloat final { //glGetFloatv(...)
 #endif
 
 #if 1
-struct LimitsFBOAttachParam final { //glGetFramebufferAttachmentParameteriv(...)
+struct LimitsFBOAttachParam final { //`glGetFramebufferAttachmentParameteriv(...)`
 	GLenum param;
 	GLint vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_fbo_attach_param[] = {
@@ -76,7 +76,7 @@ struct LimitsFBOAttachParam final { //glGetFramebufferAttachmentParameteriv(...)
 #endif
 
 #if 1
-struct LimitsFBOParam final { //glGetFramebufferParameteriv(...)
+struct LimitsFBOParam final { //`glGetFramebufferParameteriv(...)`
 	GLenum param;
 	GLint vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_fbo_param[] = {
@@ -89,7 +89,7 @@ struct LimitsFBOParam final { //glGetFramebufferParameteriv(...)
 #endif
 
 #if 1
-struct LimitsInt64 final { //glGetInteger64v(...)
+struct LimitsInt64 final { //`glGetInteger64v(...)`
 	GLenum param;
 	GLint64 vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_int64[] = {
@@ -100,7 +100,7 @@ struct LimitsInt64 final { //glGetInteger64v(...)
 #endif
 
 #if 1
-struct LimitsIntv final { //glGetIntegeri_v(...)
+struct LimitsIntv final { //`glGetIntegeri_v(...)`
 	GLenum param;
 	GLint vers[2+4+7][3]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_intv[] = {
@@ -110,7 +110,7 @@ struct LimitsIntv final { //glGetIntegeri_v(...)
 #endif
 
 #if 1
-struct LimitsInt final { //glGetIntegerv(...)
+struct LimitsInt final { //`glGetIntegerv(...)`
 	GLenum param;
 	GLint vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_int[] = {
@@ -275,7 +275,7 @@ struct LimitsInt final { //glGetIntegerv(...)
 #endif
 
 #if 1
-struct LimitsInternalFmt final { //glGetInternalformativ(...)
+struct LimitsInternalFmt final { //`glGetInternalformativ(...)`
 	GLenum param;
 	GLint vers[2+4+7]; //GL 2.0,2.1, 3.0,3.1,3.2,3.3, 4.0,4.1,4.2,4.3,4.4,4.5,4.6
 } limits_intfmt[] = {
